@@ -41,7 +41,7 @@
 
 ## Documentation
 
-To learn how to use, develop, and upgrade the project, please refer to the [Wiki][wiki].
+To learn how to use, develop, and upgrade the project, please refer to the [Wiki][wiki]..
 
 ## Contributing
 
