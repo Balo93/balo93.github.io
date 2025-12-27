@@ -5,7 +5,7 @@ categories: [Prueba, Inicio]
 tags: [test]     # TAG names should always be lowercase
 
 description: Es mi primer post de prueba.
-toc: true
+toc: false
 ---
 
 ![img-description](/assets/img/Primer-Blog/First.jpg)
