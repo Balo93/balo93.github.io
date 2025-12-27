@@ -1,0 +1,49 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://balo93.github.io/</id>
+  <title>CyberBalo</title>
+  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
+  <updated>2025-12-27T16:11:09-05:00</updated>
+  <author>
+    <name>Alvaro Gavilanes</name>
+    <uri>https://balo93.github.io/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="https://balo93.github.io/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="es"
+    href="https://balo93.github.io/"/>
+  <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
+  <rights> © 2025 Alvaro Gavilanes </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Primer Post</title>
+    <link href="https://balo93.github.io/posts/mi-primer-post/" rel="alternate" type="text/html" title="Primer Post" />
+    <published>2025-12-27T13:15:00-05:00</published>
+  
+    <updated>2025-12-27T15:26:33-05:00</updated>
+  
+    <id>https://balo93.github.io/posts/mi-primer-post/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/mi-primer-post/" />
+    <author>
+      <name>Alvaro Gavilanes</name>
+    </author>
+
+  
+    
+    <category term="Prueba" />
+    
+    <category term="Inicio" />
+    
+  
+
+  <summary>Es mi primer post de prueba.</summary>
+
+  </entry>
+
+</feed>
+
+
