@@ -1,12 +1,12 @@
 [
   
   {
-    "title": "Primer Post",
-    "url": "/posts/mi-primer-post/",
-    "categories": "Prueba, Inicio",
-    "tags": "test",
-    "date": "2025-12-27 13:15:00 -0500",
-    "content": "Es mi primer post de prueba."
+    "title": "Reconocimiento Pasivo: El Arte de Investigar sin ser Visto",
+    "url": "/posts/reconocimiento/",
+    "categories": "Hacking, Reconocimiento",
+    "tags": "osint, pasivo, footprinting, hacking-etico",
+    "date": "2025-12-28 12:34:00 -0500",
+    "content": "Guía estratégica para realizar una recolección de información (OSINT) efectiva y ética."
   }
   
 ]
