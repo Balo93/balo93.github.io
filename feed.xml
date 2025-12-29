@@ -4,7 +4,7 @@
   <id>https://balo93.github.io/</id>
   <title>CyberBalo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-12-28T22:10:17-05:00</updated>
+  <updated>2025-12-29T01:48:00-05:00</updated>
   <author>
     <name>Alvaro Gavilanes</name>
     <uri>https://balo93.github.io/</uri>
@@ -20,14 +20,40 @@
 
   
   <entry>
+    <title>Reconocimiento Activo: El Arte de Investigar</title>
+    <link href="https://balo93.github.io/posts/reconocimiento-activo/" rel="alternate" type="text/html" title="Reconocimiento Activo: El Arte de Investigar" />
+    <published>2025-12-29T00:45:00-05:00</published>
+  
+    <updated>2025-12-29T00:45:00-05:00</updated>
+  
+    <id>https://balo93.github.io/posts/reconocimiento-activo/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/reconocimiento-activo/" />
+    <author>
+      <name>Alvaro Gavilanes</name>
+    </author>
+
+  
+    
+    <category term="Hacking" />
+    
+    <category term="Reconocimiento" />
+    
+  
+
+  <summary>Guía estratégica para realizar una recolección de información (OSINT) efectiva y ética.</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>Reconocimiento Pasivo: El Arte de Investigar sin ser Visto</title>
-    <link href="https://balo93.github.io/posts/reconocimiento/" rel="alternate" type="text/html" title="Reconocimiento Pasivo: El Arte de Investigar sin ser Visto" />
+    <link href="https://balo93.github.io/posts/reconocimiento-pasivo/" rel="alternate" type="text/html" title="Reconocimiento Pasivo: El Arte de Investigar sin ser Visto" />
     <published>2025-12-28T12:34:00-05:00</published>
   
     <updated>2025-12-28T12:34:00-05:00</updated>
   
-    <id>https://balo93.github.io/posts/reconocimiento/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/reconocimiento/" />
+    <id>https://balo93.github.io/posts/reconocimiento-pasivo/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/reconocimiento-pasivo/" />
     <author>
       <name>Alvaro Gavilanes</name>
     </author>

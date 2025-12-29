@@ -1,8 +1,17 @@
 [
   
   {
+    "title": "Reconocimiento Activo: El Arte de Investigar",
+    "url": "/posts/reconocimiento-activo/",
+    "categories": "Hacking, Reconocimiento",
+    "tags": "osint, activo, hacking-etico",
+    "date": "2025-12-29 00:45:00 -0500",
+    "content": "Guía estratégica para realizar una recolección de información (OSINT) efectiva y ética."
+  },
+  
+  {
     "title": "Reconocimiento Pasivo: El Arte de Investigar sin ser Visto",
-    "url": "/posts/reconocimiento/",
+    "url": "/posts/reconocimiento-pasivo/",
     "categories": "Hacking, Reconocimiento",
     "tags": "osint, pasivo, footprinting, hacking-etico",
     "date": "2025-12-28 12:34:00 -0500",
