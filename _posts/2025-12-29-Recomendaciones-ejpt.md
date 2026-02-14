@@ -7,6 +7,9 @@ description: Recomendaciones para la certificación de eJPT.
 ---
 
 ## Recomendaciones
+> Advertencia: Entrada en construcción.
+{: .prompt-warning }
+
 Analizar todos los equipos de la red y empezar por la primera dirección encontrada.
 1. Cuál es la dirección del equipo que está corriendo WordPress.
     Se debe empezar viendo los servicios que están corriendo en los puerto 80 u 8080
