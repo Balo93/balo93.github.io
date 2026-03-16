@@ -100,6 +100,6 @@ Se puede buscar más comandos en cheatsheet de apoyo como el que les comparto a 
 
 ## Reconocimiento Básico SAMBA (SMB)
 
-#Video 1:10:00
+#Video 1:10:02
 
 ## FootPrinting y Escaneo
