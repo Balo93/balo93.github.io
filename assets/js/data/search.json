@@ -4,7 +4,7 @@
     "title": "Enumeración - Cracking de contraseñas",
     "url": "/posts/enum-crack-pass/",
     "categories": "Hacking, Cracking",
-    "tags": "cracking, enumeración, hacking-etico",
+    "tags": "cracking, enumeración, Nmap, Metasploit, Hydra y CrackMapExec",
     "date": "2026-02-15 16:45:00 -0500",
     "content": "Cómo enumerar usuarios y crackear contraseñas de servicios vulnerables."
   },
