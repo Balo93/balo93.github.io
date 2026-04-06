@@ -4,7 +4,7 @@
   <id>https://balo93.github.io/</id>
   <title>CyberBalo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-03-21T18:52:27-05:00</updated>
+  <updated>2026-04-05T23:00:02-05:00</updated>
   <author>
     <name>Alvaro Gavilanes</name>
     <uri>https://balo93.github.io/</uri>
@@ -17,6 +17,34 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Análsis de Vulnerabilidades y Explotación</title>
+    <link href="https://balo93.github.io/posts/analisis-vuln-enum/" rel="alternate" type="text/html" title="Análsis de Vulnerabilidades y Explotación" />
+    <published>2026-03-28T17:39:00-05:00</published>
+  
+    <updated>2026-03-28T17:39:00-05:00</updated>
+  
+    <id>https://balo93.github.io/posts/analisis-vuln-enum/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/analisis-vuln-enum/" />
+    <author>
+      <name>Alvaro Gavilanes</name>
+    </author>
+
+  
+    
+    <category term="Hacking" />
+    
+    <category term="Vulnerabilidades" />
+    
+    <category term="Explotación" />
+    
+  
+
+  <summary>Cómo enumerar usuarios y crackear contraseñas de servicios vulnerables.</summary>
+
+  </entry>
 
   
   <entry>
@@ -50,7 +78,7 @@
     <link href="https://balo93.github.io/posts/reconocimiento-activo/" rel="alternate" type="text/html" title="Reconocimiento Activo: El Arte de Investigar" />
     <published>2025-12-29T00:45:00-05:00</published>
   
-    <updated>2025-12-30T05:10:56-05:00</updated>
+    <updated>2026-04-05T22:58:43-05:00</updated>
   
     <id>https://balo93.github.io/posts/reconocimiento-activo/</id>
     <content type="text/html" src="https://balo93.github.io/posts/reconocimiento-activo/" />
@@ -76,7 +104,7 @@
     <link href="https://balo93.github.io/posts/Recomendaciones-ejpt/" rel="alternate" type="text/html" title="Recomendaciones eJPT" />
     <published>2025-12-29T00:45:00-05:00</published>
   
-    <updated>2026-03-21T18:50:52-05:00</updated>
+    <updated>2026-04-05T22:58:43-05:00</updated>
   
     <id>https://balo93.github.io/posts/Recomendaciones-ejpt/</id>
     <content type="text/html" src="https://balo93.github.io/posts/Recomendaciones-ejpt/" />

@@ -1,6 +1,15 @@
 [
   
   {
+    "title": "Análsis de Vulnerabilidades y Explotación",
+    "url": "/posts/analisis-vuln-enum/",
+    "categories": "Hacking, Vulnerabilidades, Explotación",
+    "tags": "cracking, enumeración, Nmap, Metasploit, Hydra y CrackMapExec",
+    "date": "2026-03-28 17:39:00 -0500",
+    "content": "Cómo enumerar usuarios y crackear contraseñas de servicios vulnerables."
+  },
+  
+  {
     "title": "Enumeración - Cracking de contraseñas",
     "url": "/posts/enum-crack-pass/",
     "categories": "Hacking, Cracking",
