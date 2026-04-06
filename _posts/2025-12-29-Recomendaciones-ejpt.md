@@ -16,4 +16,6 @@ Analizar todos los equipos de la red y empezar por la primera dirección encontr
 
 2. Cuántos equipos en la DMZ están corriendo windows.
 3. Cuando se encuentre varios puertos abiertos, empezar por los comunmente más explotables.
-4. analizar los nombres de los equipos en toda la red con crackmapexec
+4. Analizar los nombres de los equipos en toda la red con crackmapexec
+5. Revisar el código fuente del código en las páginas webs, ya que algunos servicios pueden apuntar a otras páginas o direcciónes, esto se analizar agregado la ip y dominio en /etc/hosts.
+6. 

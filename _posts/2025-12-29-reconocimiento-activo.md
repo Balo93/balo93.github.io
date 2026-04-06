@@ -72,6 +72,8 @@ sudo nmap -sn 192.168.100.0/24
 
 * **-oG**: Exporta el resultado a formato "grepeable".
 
+* **--stats-every 3**: Cada 3 segundos muestra el porcentaje que lleva el escaneo.
+
 ## Uso de Scripts Avanzados
 
 Se pueden detallar scripts por separado mediante --script "vuln,exploit". Algunos útiles para SMB:
