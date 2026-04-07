@@ -4,6 +4,7 @@ date: 2025-12-28 12:34:00 -0500
 categories: [Hacking, Reconocimiento]
 tags: [osint, pasivo, footprinting, hacking-etico]
 description: Guía estratégica para realizar una recolección de información (OSINT) efectiva y ética.
+toc: true
 ---
 
 ![Reconocimiento Pasivo](/assets/img/Primer-Blog/Osint.png){: width="350" }

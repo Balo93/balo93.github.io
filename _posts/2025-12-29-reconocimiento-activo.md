@@ -4,6 +4,7 @@ date: 2025-12-29 00:45:00 -0500
 categories: [Hacking, Reconocimiento]
 tags: [osint, activo, hacking-etico]
 description: Guía estratégica para realizar una recolección de información (OSINT) efectiva y ética.
+toc: true
 ---
 
 ## Reconocimiento Activo: El Arte de Investigar

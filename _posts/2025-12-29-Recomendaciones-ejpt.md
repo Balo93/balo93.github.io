@@ -4,6 +4,7 @@ date: 2025-12-29 00:45:00 -0500
 categories: [Hacking, eJPT]
 tags: [ejpt, hacking-etico]
 description: Recomendaciones para la certificación de eJPT.
+toc: true
 ---
 
 ## Recomendaciones

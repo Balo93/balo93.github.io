@@ -4,6 +4,7 @@ date: 2026-03-28 17:39:00 -0500
 categories: [Hacking, Vulnerabilidades, Explotación]
 tags: [cracking, enumeración, Nmap, Metasploit, Hydra y CrackMapExec]
 description: Cómo enumerar usuarios y crackear contraseñas de servicios vulnerables.
+toc: true
 ---
 
 En este artículo, analizaremos distintas metodologías para identificar y explotar vulnerabilidades en sistemas Windows. Para nuestra práctica, utilizaremos la máquina Metasploitable 3, un entorno diseñado con múltiples servicios vulnerables que nos permite poner a prueba habilidades de enumeración y escalada de privilegios.

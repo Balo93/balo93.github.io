@@ -4,6 +4,7 @@ date: 2026-02-15 16:45:00 -0500
 categories: [Hacking, Cracking]
 tags: [cracking, enumeración, Nmap, Metasploit, Hydra y CrackMapExec]
 description: Cómo enumerar usuarios y crackear contraseñas de servicios vulnerables.
+toc: true
 ---
 
 En este artículo, exploraremos las técnicas y herramientas fundamentales para descubrir hosts activos y enumerar servicios clave como FTP, SMB, Apache, MySQL y SSH. Además, veremos cómo aprovechar esta información para ejecutar ataques de fuerza bruta y cracking de credenciales. Ya sea que estés auditando una red real o practicando en entornos de entrenamiento (CTF), dominar esta metodología es el primer paso para comprometer un sistema.
