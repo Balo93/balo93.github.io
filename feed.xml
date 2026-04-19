@@ -4,7 +4,7 @@
   <id>https://balo93.github.io/</id>
   <title>CyberBalo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-04-08T00:39:15-05:00</updated>
+  <updated>2026-04-19T16:11:36-05:00</updated>
   <author>
     <name>Alvaro Gavilanes</name>
     <uri>https://balo93.github.io/</uri>
@@ -17,6 +17,34 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Resolución de Laboratorios</title>
+    <link href="https://balo93.github.io/posts/laboratorios/" rel="alternate" type="text/html" title="Resolución de Laboratorios" />
+    <published>2026-04-14T22:39:00-05:00</published>
+  
+    <updated>2026-04-14T22:39:00-05:00</updated>
+  
+    <id>https://balo93.github.io/posts/laboratorios/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/laboratorios/" />
+    <author>
+      <name>Alvaro Gavilanes</name>
+    </author>
+
+  
+    
+    <category term="Hacking" />
+    
+    <category term="Vulnerabilidades" />
+    
+    <category term="Explotación" />
+    
+  
+
+  <summary>Laboratorios.</summary>
+
+  </entry>
 
   
   <entry>
@@ -121,32 +149,6 @@
   
 
   <summary>Recomendaciones para la certificación de eJPT.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Reconocimiento Pasivo: El Arte de Investigar sin ser Visto</title>
-    <link href="https://balo93.github.io/posts/reconocimiento-pasivo/" rel="alternate" type="text/html" title="Reconocimiento Pasivo: El Arte de Investigar sin ser Visto" />
-    <published>2025-12-28T12:34:00-05:00</published>
-  
-    <updated>2026-04-06T23:54:16-05:00</updated>
-  
-    <id>https://balo93.github.io/posts/reconocimiento-pasivo/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/reconocimiento-pasivo/" />
-    <author>
-      <name>Alvaro Gavilanes</name>
-    </author>
-
-  
-    
-    <category term="Hacking" />
-    
-    <category term="Reconocimiento" />
-    
-  
-
-  <summary>Guía estratégica para realizar una recolección de información (OSINT) efectiva y ética.</summary>
 
   </entry>
 

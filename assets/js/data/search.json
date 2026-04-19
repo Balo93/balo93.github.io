@@ -1,6 +1,15 @@
 [
   
   {
+    "title": "Resolución de Laboratorios",
+    "url": "/posts/laboratorios/",
+    "categories": "Hacking, Vulnerabilidades, Explotación",
+    "tags": "cracking, enumeración, Nmap, Metasploit, Hydra y CrackMapExec",
+    "date": "2026-04-14 22:39:00 -0500",
+    "content": "Laboratorios."
+  },
+  
+  {
     "title": "Análsis de Vulnerabilidades y Explotación",
     "url": "/posts/analisis-vuln-enum/",
     "categories": "Hacking, Vulnerabilidades, Explotación",
