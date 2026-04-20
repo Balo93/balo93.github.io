@@ -19,4 +19,11 @@ Analizar todos los equipos de la red y empezar por la primera dirección encontr
 3. Cuando se encuentre varios puertos abiertos, empezar por los comunmente más explotables.
 4. Analizar los nombres de los equipos en toda la red con crackmapexec
 5. Revisar el código fuente del código en las páginas webs, ya que algunos servicios pueden apuntar a otras páginas o direcciónes, esto se analizar agregado la ip y dominio en /etc/hosts.
-6. 
+6. En la Evaluación solo se utiliza dirb para reconocimiento de directorios.
+7. Al hacer un escaneo de puertos, si se encuentran los puertos:   
+    139 o 445 ataque de ethernalblue
+    3389 ataque de bluekepp
+    139 o 445 ataque de SMBClient, SMBMap, enum4linux
+   Todas estas herramientas permite ver recursos compartidos.
+8. No se debe realizar fuerza bruta de usuarios y contraseas, primero buscar usuarios y luego un ataque a la contrasea a exepción de Windows porque los usuarios siempre son administrator.
+9. 
