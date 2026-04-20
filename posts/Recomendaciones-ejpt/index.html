@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="Recomendaciones eJPT" />
 <meta name="twitter:site" content="@alvarogbalo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-04-06T23:54:16-05:00","datePublished":"2025-12-29T00:45:00-05:00","description":"Recomendaciones para la certificación de eJPT.","headline":"Recomendaciones eJPT","mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/Recomendaciones-ejpt/"},"url":"https://balo93.github.io/posts/Recomendaciones-ejpt/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-04-20T00:01:15-05:00","datePublished":"2025-12-29T00:45:00-05:00","description":"Recomendaciones para la certificación de eJPT.","headline":"Recomendaciones eJPT","mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/Recomendaciones-ejpt/"},"url":"https://balo93.github.io/posts/Recomendaciones-ejpt/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -621,13 +621,13 @@
 
 <time
   
-  data-ts="1775537656"
+  data-ts="1776661275"
   data-df="DD/MM/YYYY"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  06/04/2026
+  20/04/2026
 </time>
 
         </span>
@@ -670,7 +670,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="107 palabras"
+  title="184 palabras"
 >
   <em>1 min</em> de lectura</span>
 
@@ -719,6 +719,13 @@
   <li>Cuando se encuentre varios puertos abiertos, empezar por los comunmente más explotables.</li>
   <li>Analizar los nombres de los equipos en toda la red con crackmapexec</li>
   <li>Revisar el código fuente del código en las páginas webs, ya que algunos servicios pueden apuntar a otras páginas o direcciónes, esto se analizar agregado la ip y dominio en /etc/hosts.</li>
+  <li>En la Evaluación solo se utiliza dirb para reconocimiento de directorios.</li>
+  <li>Al hacer un escaneo de puertos, si se encuentran los puertos: <br />
+ 139 o 445 ataque de ethernalblue
+ 3389 ataque de bluekepp
+ 139 o 445 ataque de SMBClient, SMBMap, enum4linux
+Todas estas herramientas permite ver recursos compartidos.</li>
+  <li>No se debe realizar fuerza bruta de usuarios y contraseas, primero buscar usuarios y luego un ataque a la contrasea a exepción de Windows porque los usuarios siempre son administrator.</li>
   <li></li>
 </ol>
 
@@ -853,6 +860,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/Recomendaciones-ejpt/">Recomendaciones eJPT</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/laboratorios/">Resolución de Laboratorios</a>
         </li>
       
@@ -861,13 +875,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/reconocimiento-pasivo/">Reconocimiento Pasivo: El Arte de Investigar sin ser Visto</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Recomendaciones-ejpt/">Recomendaciones eJPT</a>
         </li>
       
         
@@ -941,34 +948,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1005,29 +984,6 @@
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -1050,8 +1006,6 @@
     
     
     
-      
-    
   
     
     
@@ -1061,74 +1015,6 @@
     
     
     
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1159,6 +1045,90 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1183,6 +1153,76 @@
     
     
     
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1266,16 +1306,16 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/cracking/">cracking</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/enumeraci%C3%B3n/">enumeración</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/hacking-etico/">hacking-etico</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/hydra-y-crackmapexec/">Hydra y CrackMapExec</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/metasploit/">Metasploit</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/metasploit/">Metasploit</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/enumeraci%C3%B3n/">enumeración</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/hydra-y-crackmapexec/">Hydra y CrackMapExec</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/nmap/">Nmap</a>
@@ -1641,34 +1681,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1705,29 +1717,6 @@
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -1750,8 +1739,6 @@
     
     
     
-      
-    
   
     
     
@@ -1761,74 +1748,6 @@
     
     
     
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1859,6 +1778,90 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1883,6 +1886,76 @@
     
     
     
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1966,16 +2039,16 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/cracking/">cracking</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/enumeraci%C3%B3n/">enumeración</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/hacking-etico/">hacking-etico</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/hydra-y-crackmapexec/">Hydra y CrackMapExec</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/metasploit/">Metasploit</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/metasploit/">Metasploit</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/enumeraci%C3%B3n/">enumeración</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/hydra-y-crackmapexec/">Hydra y CrackMapExec</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/nmap/">Nmap</a>
