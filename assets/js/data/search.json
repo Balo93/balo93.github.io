@@ -1,6 +1,15 @@
 [
   
   {
+    "title": "Explotación y Post Explotación",
+    "url": "/posts/explotacion-y-post-explotacion/",
+    "categories": "Hacking, Vulnerabilidades, Explotación",
+    "tags": "shellshock, Metasploit, privesc, webdav, cracking, kiwi, incognito, powersploit, john",
+    "date": "2026-04-20 21:39:00 -0500",
+    "content": "Laboratorios."
+  },
+  
+  {
     "title": "Resolución de Laboratorios",
     "url": "/posts/laboratorios/",
     "categories": "Hacking, Vulnerabilidades, Explotación",

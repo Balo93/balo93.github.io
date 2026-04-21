@@ -4,7 +4,7 @@
   <id>https://balo93.github.io/</id>
   <title>CyberBalo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-04-20T00:02:33-05:00</updated>
+  <updated>2026-04-20T22:58:08-05:00</updated>
   <author>
     <name>Alvaro Gavilanes</name>
     <uri>https://balo93.github.io/</uri>
@@ -17,6 +17,34 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Explotación y Post Explotación</title>
+    <link href="https://balo93.github.io/posts/explotacion-y-post-explotacion/" rel="alternate" type="text/html" title="Explotación y Post Explotación" />
+    <published>2026-04-20T21:39:00-05:00</published>
+  
+    <updated>2026-04-20T21:39:00-05:00</updated>
+  
+    <id>https://balo93.github.io/posts/explotacion-y-post-explotacion/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/explotacion-y-post-explotacion/" />
+    <author>
+      <name>Alvaro Gavilanes</name>
+    </author>
+
+  
+    
+    <category term="Hacking" />
+    
+    <category term="Vulnerabilidades" />
+    
+    <category term="Explotación" />
+    
+  
+
+  <summary>Laboratorios.</summary>
+
+  </entry>
 
   
   <entry>
@@ -123,32 +151,6 @@
   
 
   <summary>Guía estratégica para realizar una recolección de información (OSINT) efectiva y ética.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Recomendaciones eJPT</title>
-    <link href="https://balo93.github.io/posts/Recomendaciones-ejpt/" rel="alternate" type="text/html" title="Recomendaciones eJPT" />
-    <published>2025-12-29T00:45:00-05:00</published>
-  
-    <updated>2026-04-20T00:01:15-05:00</updated>
-  
-    <id>https://balo93.github.io/posts/Recomendaciones-ejpt/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/Recomendaciones-ejpt/" />
-    <author>
-      <name>Alvaro Gavilanes</name>
-    </author>
-
-  
-    
-    <category term="Hacking" />
-    
-    <category term="eJPT" />
-    
-  
-
-  <summary>Recomendaciones para la certificación de eJPT.</summary>
 
   </entry>
 
