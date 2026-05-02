@@ -28,3 +28,7 @@ Analizar todos los equipos de la red y empezar por la primera dirección encontr
 8. No se debe realizar fuerza bruta de usuarios y contraseas, primero buscar usuarios y luego un ataque a la contrasea a exepción de Windows porque los usuarios siempre son administrator.
 9. En el exámen al hacer pivoting los puertos que nos van a interesar son el 80,445,139
 10. Si se encuentran credenciales para 1 equipo, debemos probarlo en los demás.
+11. Mysql puede no encontrarse en el puerto 3306
+12. En el exámen utilizar el diccionario de rockyou.
+13. Si nos piden correos electrónicos, se debe sacar de la base de datos mysql - wp_usres.
+14. 

