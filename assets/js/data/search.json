@@ -1,6 +1,15 @@
 [
   
   {
+    "title": "Pentesting en Windows: De la Explotación a la Post-Explotación",
+    "url": "/posts/escalacion-privilegios/",
+    "categories": "Pentesting, Windows Security, Post-Exploitation",
+    "tags": "Metasploit, BadBlue, Pivoting, RDP, Privilege Escalation, Hydra, SSH, Meterpreter, msfvenom",
+    "date": "2026-05-02 12:03:00 -0500",
+    "content": "Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows."
+  },
+  
+  {
     "title": "Explotación y Post Explotación",
     "url": "/posts/explotacion-y-post-explotacion/",
     "categories": "Hacking, Vulnerabilidades, Explotación, Pivoting",
