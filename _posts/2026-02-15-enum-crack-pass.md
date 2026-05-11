@@ -2,7 +2,7 @@
 title: "Enumeración - Cracking de contraseñas"
 date: 2026-02-15 16:45:00 -0500
 categories: [Hacking, Cracking]
-tags: [cracking, enumeración, Nmap, Metasploit, Hydra y CrackMapExec]
+tags: [cracking, enumeración, Nmap, Metasploit, Hydra, CrackMapExec]
 description: Cómo enumerar usuarios y crackear contraseñas de servicios vulnerables.
 toc: true
 ---

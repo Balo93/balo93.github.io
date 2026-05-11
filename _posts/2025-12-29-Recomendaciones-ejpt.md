@@ -31,4 +31,6 @@ Analizar todos los equipos de la red y empezar por la primera dirección encontr
 11. Mysql puede no encontrarse en el puerto 3306
 12. En el exámen utilizar el diccionario de rockyou.
 13. Si nos piden correos electrónicos, se debe sacar de la base de datos mysql - wp_usres.
-14. 
+14. WinPEAS y LinPEAS: las herramientas de enumeración de escalada de privilegios más potentes para pentesters.
+15. Al hacer ataque de fuerza bruta se empieza primero misma lista de usuarios encontrados y como clave misma lista de usuarios encontrados y luego con rockyou.
+16. Si se tiene un wordpress y hay que acceder a la página 404, hay q apuntar a la ip con una ruta q no existe o al dominio, hay q ir probando.

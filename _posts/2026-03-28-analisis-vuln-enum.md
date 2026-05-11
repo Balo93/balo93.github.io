@@ -2,7 +2,7 @@
 title: "Análsis de Vulnerabilidades y Explotación"
 date: 2026-03-28 17:39:00 -0500
 categories: [Hacking, Vulnerabilidades, Explotación]
-tags: [cracking, enumeración, Nmap, Metasploit, Hydra y CrackMapExec]
+tags: [cracking, enumeración, Nmap, Metasploit, Hydra, CrackMapExec]
 description: Cómo enumerar usuarios y crackear contraseñas de servicios vulnerables.
 toc: true
 ---

@@ -2,7 +2,7 @@
 title: "Explotación y Post Explotación"
 date: 2026-04-20 21:39:00 -0500
 categories: [Hacking, Vulnerabilidades, Explotación, Pivoting]
-tags: [Metasploit, cron jobs, nikto, wordpress, cracking, hydra, nselib]
+tags: [Metasploit, cron jobs, nikto, wordpress, cracking, Hydra, nselib]
 description: Laboratorios.
 image:
   path: /assets/img/Primer-Blog/explotacion-post-explotacion.png
