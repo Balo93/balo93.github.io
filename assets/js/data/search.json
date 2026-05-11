@@ -1,6 +1,24 @@
 [
   
   {
+    "title": "Resolución de Laboratorios Parte 2",
+    "url": "/posts/laboratorios-parte2/",
+    "categories": "Pentesting, Windows Security, Post-Exploitation",
+    "tags": "Metasploit, BadBlue, Pivoting, RDP, Privilege Escalation, Hydra, SSH, Meterpreter, msfvenom",
+    "date": "2026-05-09 11:38:00 -0500",
+    "content": "Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows."
+  },
+  
+  {
+    "title": "Resolución de Laboratorios",
+    "url": "/posts/laboratorios-parte1/",
+    "categories": "Pentesting, Windows Security, Post-Exploitation",
+    "tags": "Metasploit, BadBlue, Pivoting, RDP, Privilege Escalation, Hydra, SSH, Meterpreter, msfvenom",
+    "date": "2026-05-05 21:17:00 -0500",
+    "content": "Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows."
+  },
+  
+  {
     "title": "Pentesting en Windows: De la Explotación a la Post-Explotación",
     "url": "/posts/escalacion-privilegios/",
     "categories": "Pentesting, Windows Security, Post-Exploitation",
@@ -13,7 +31,7 @@
     "title": "Explotación y Post Explotación",
     "url": "/posts/explotacion-y-post-explotacion/",
     "categories": "Hacking, Vulnerabilidades, Explotación, Pivoting",
-    "tags": "Metasploit, cron jobs, nikto, wordpress, cracking, hydra, nselib",
+    "tags": "Metasploit, cron jobs, nikto, wordpress, cracking, Hydra, nselib",
     "date": "2026-04-20 21:39:00 -0500",
     "content": "Laboratorios."
   },
@@ -31,7 +49,7 @@
     "title": "Análsis de Vulnerabilidades y Explotación",
     "url": "/posts/analisis-vuln-enum/",
     "categories": "Hacking, Vulnerabilidades, Explotación",
-    "tags": "cracking, enumeración, Nmap, Metasploit, Hydra y CrackMapExec",
+    "tags": "cracking, enumeración, Nmap, Metasploit, Hydra, CrackMapExec",
     "date": "2026-03-28 17:39:00 -0500",
     "content": "Cómo enumerar usuarios y crackear contraseñas de servicios vulnerables."
   },
@@ -40,7 +58,7 @@
     "title": "Enumeración - Cracking de contraseñas",
     "url": "/posts/enum-crack-pass/",
     "categories": "Hacking, Cracking",
-    "tags": "cracking, enumeración, Nmap, Metasploit, Hydra y CrackMapExec",
+    "tags": "cracking, enumeración, Nmap, Metasploit, Hydra, CrackMapExec",
     "date": "2026-02-15 16:45:00 -0500",
     "content": "Cómo enumerar usuarios y crackear contraseñas de servicios vulnerables."
   },
