@@ -4,7 +4,7 @@
   <id>https://balo93.github.io/</id>
   <title>CyberBalo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-05-11T01:33:22-05:00</updated>
+  <updated>2026-05-16T16:22:06-05:00</updated>
   <author>
     <name>Alvaro Gavilanes</name>
     <uri>https://balo93.github.io/</uri>
@@ -17,6 +17,34 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>La ruta secreta para la certificación eJPT</title>
+    <link href="https://balo93.github.io/posts/ruta-secreta-ejpt/" rel="alternate" type="text/html" title="La ruta secreta para la certificación eJPT" />
+    <published>2026-05-14T21:47:00-05:00</published>
+  
+    <updated>2026-05-14T21:47:00-05:00</updated>
+  
+    <id>https://balo93.github.io/posts/ruta-secreta-ejpt/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/ruta-secreta-ejpt/" />
+    <author>
+      <name>Alvaro Gavilanes</name>
+    </author>
+
+  
+    
+    <category term="Pentesting" />
+    
+    <category term="Windows Security" />
+    
+    <category term="Post-Exploitation" />
+    
+  
+
+  <summary>Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows.</summary>
+
+  </entry>
 
   
   <entry>
@@ -125,34 +153,6 @@
     <category term="Explotación" />
     
     <category term="Pivoting" />
-    
-  
-
-  <summary>Laboratorios.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Resolución de Laboratorios</title>
-    <link href="https://balo93.github.io/posts/laboratorios/" rel="alternate" type="text/html" title="Resolución de Laboratorios" />
-    <published>2026-04-14T22:39:00-05:00</published>
-  
-    <updated>2026-04-20T00:01:15-05:00</updated>
-  
-    <id>https://balo93.github.io/posts/laboratorios/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/laboratorios/" />
-    <author>
-      <name>Alvaro Gavilanes</name>
-    </author>
-
-  
-    
-    <category term="Hacking" />
-    
-    <category term="Vulnerabilidades" />
-    
-    <category term="Explotación" />
     
   
 

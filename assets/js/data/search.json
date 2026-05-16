@@ -1,6 +1,15 @@
 [
   
   {
+    "title": "La ruta secreta para la certificación eJPT",
+    "url": "/posts/ruta-secreta-ejpt/",
+    "categories": "Pentesting, Windows Security, Post-Exploitation",
+    "tags": "Metasploit, BadBlue, Pivoting, RDP, Privilege Escalation, Hydra, SSH, Meterpreter, msfvenom",
+    "date": "2026-05-14 21:47:00 -0500",
+    "content": "Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows."
+  },
+  
+  {
     "title": "Resolución de Laboratorios Parte 2",
     "url": "/posts/laboratorios-parte2/",
     "categories": "Pentesting, Windows Security, Post-Exploitation",

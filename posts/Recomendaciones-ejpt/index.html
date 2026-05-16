@@ -39,12 +39,12 @@
 <meta property="og:site_name" content="CyberBalo" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-12-29T00:45:00-05:00" />
-<meta property="article:modified_time" content="2026-05-11T01:31:59-05:00" />
+<meta property="article:modified_time" content="2026-05-16T15:36:07-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Recomendaciones eJPT" />
 <meta name="twitter:site" content="@alvarogbalo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-11T01:31:59-05:00","datePublished":"2025-12-29T00:45:00-05:00","description":"Recomendaciones para la certificación de eJPT.","headline":"Recomendaciones eJPT","mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/Recomendaciones-ejpt/"},"url":"https://balo93.github.io/posts/Recomendaciones-ejpt/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-16T15:36:07-05:00","datePublished":"2025-12-29T00:45:00-05:00","description":"Recomendaciones para la certificación de eJPT.","headline":"Recomendaciones eJPT","mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/Recomendaciones-ejpt/"},"url":"https://balo93.github.io/posts/Recomendaciones-ejpt/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -622,13 +622,13 @@
 
 <time
   
-  data-ts="1778481119"
+  data-ts="1778963767"
   data-df="DD/MM/YYYY"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  11/05/2026
+  16/05/2026
 </time>
 
         </span>
@@ -671,9 +671,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="317 palabras"
+  title="463 palabras"
 >
-  <em>1 min</em> de lectura</span>
+  <em>2 min</em> de lectura</span>
 
         </div>
       </div>
@@ -735,6 +735,30 @@ Todas estas herramientas permite ver recursos compartidos.</li>
   <li>WinPEAS y LinPEAS: las herramientas de enumeración de escalada de privilegios más potentes para pentesters.</li>
   <li>Al hacer ataque de fuerza bruta se empieza primero misma lista de usuarios encontrados y como clave misma lista de usuarios encontrados y luego con rockyou.</li>
   <li>Si se tiene un wordpress y hay que acceder a la página 404, hay q apuntar a la ip con una ruta q no existe o al dominio, hay q ir probando.</li>
+  <li>Cuando se quiere analizar subdominios ocupar
+    <div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>gobuster vhost <span class="nt">-u</span> http://dominio.com/ <span class="nt">-w</span> /usr/share/wordlists/Seclists/Discovery/DNS/subdomains-top1millon-5000.txt <span class="nt">--append-domain</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>En /etc/hosts se debe agregar la ip dominio subdminio.dominio y así.</li>
+  <li>Busca por Tecnología + Acción: En lugar de buscar el código completo, busca “EJS Prototype Pollution RCE PoC”. Los términos PoC (Proof of Concept) y RCE son palabras mágicas en Google.</li>
+  <li>Filtra por Repositorios: Muchos de estos payloads no están en blogs, sino en las secciones de “Issues” o “Discussions” de GitHub, tal como encontraste tú.</li>
+</ol>
+
+<ul>
+  <li>
+    <p>Usa Bases de Datos Técnicas: Sitios como Snyk Vulnerability DB, CVE Details o Vulners son mucho más directos que una búsqueda genérica en la web.</p>
+  </li>
+  <li>
+    <p>Identifica la Versión: Si sabes que el servidor usa EJS 3.1.6, busca específicamente esa versión. Los exploits suelen ser muy sensibles a los cambios de versión.
+https://github.com/backstage/backstage/issues/11093</p>
+  </li>
+</ul>
+
+<ol>
+  <li>Que versión de servicio está corriendo en el puerto 3306 del equipo WIN-01</li>
 </ol>
 
   </div>
@@ -875,6 +899,13 @@ Todas estas herramientas permite ver recursos compartidos.</li>
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/ruta-secreta-ejpt/">La ruta secreta para la certificación eJPT</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/enum-crack-pass/">Enumeración - Cracking de contraseñas</a>
         </li>
       
@@ -890,13 +921,6 @@ Todas estas herramientas permite ver recursos compartidos.</li>
         
         <li class="text-truncate lh-lg">
           <a href="/posts/explotacion-y-post-explotacion/">Explotación y Post Explotación</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/laboratorios-parte2/">Resolución de Laboratorios Parte 2</a>
         </li>
       
     </ul>
@@ -1058,11 +1082,6 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -1078,50 +1097,6 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
       
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -1149,37 +1124,37 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1232,37 +1207,37 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1322,37 +1297,37 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1444,37 +1419,37 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1583,6 +1558,28 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1607,6 +1604,23 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1652,6 +1666,113 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
       
     
   
@@ -1702,6 +1823,18 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
       
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -1725,13 +1858,10 @@ Todas estas herramientas permite ver recursos compartidos.</li>
         <a class="post-tag btn btn-outline-primary" href="/tags/hydra/">Hydra</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/cracking/">cracking</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/badblue/">BadBlue</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/hacking-etico/">hacking-etico</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cracking/">cracking</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/meterpreter/">Meterpreter</a>
@@ -1747,6 +1877,9 @@ Todas estas herramientas permite ver recursos compartidos.</li>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/rdp/">RDP</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/ssh/">SSH</a>
       
     </div>
   </section>
@@ -2211,11 +2344,6 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -2231,50 +2359,6 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
       
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -2302,37 +2386,37 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2385,37 +2469,37 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2475,37 +2559,37 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2597,37 +2681,37 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2736,6 +2820,28 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2760,6 +2866,23 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2805,6 +2928,113 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
       
     
   
@@ -2855,6 +3085,18 @@ Todas estas herramientas permite ver recursos compartidos.</li>
     
     
       
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -2878,13 +3120,10 @@ Todas estas herramientas permite ver recursos compartidos.</li>
         <a class="post-tag btn btn-outline-primary" href="/tags/hydra/">Hydra</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/cracking/">cracking</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/badblue/">BadBlue</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/hacking-etico/">hacking-etico</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cracking/">cracking</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/meterpreter/">Meterpreter</a>
@@ -2900,6 +3139,9 @@ Todas estas herramientas permite ver recursos compartidos.</li>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/rdp/">RDP</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/ssh/">SSH</a>
       
     </div>
   </section>
