@@ -39,12 +39,12 @@
 <meta property="og:site_name" content="CyberBalo" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-05-14T21:47:00-05:00" />
-<meta property="article:modified_time" content="2026-05-17T23:06:42-05:00" />
+<meta property="article:modified_time" content="2026-05-21T11:39:12-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="La ruta secreta para la certificación eJPT" />
 <meta name="twitter:site" content="@alvarogbalo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-17T23:06:42-05:00","datePublished":"2026-05-14T21:47:00-05:00","description":"Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows.","headline":"La ruta secreta para la certificación eJPT","mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/ruta-secreta-ejpt/"},"url":"https://balo93.github.io/posts/ruta-secreta-ejpt/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-21T11:39:12-05:00","datePublished":"2026-05-14T21:47:00-05:00","description":"Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows.","headline":"La ruta secreta para la certificación eJPT","mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/ruta-secreta-ejpt/"},"url":"https://balo93.github.io/posts/ruta-secreta-ejpt/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1154,13 +1154,13 @@
 
 <time
   
-  data-ts="1779077202"
+  data-ts="1779381552"
   data-df="DD/MM/YYYY"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  17/05/2026
+  21/05/2026
 </time>
 
         </span>
@@ -1203,7 +1203,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3502 palabras"
+  title="3513 palabras"
 >
   <em>19 min</em> de lectura</span>
 
@@ -2093,17 +2093,36 @@ Primero hacer un background de la sesión para regresar a meterpreter y hacemos 
 <h3 id="formas-de-analizar-ips-de-otro-host"><span class="me-2">Formas de analizar ips de otro host</span><a href="#formas-de-analizar-ips-de-otro-host" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <p>Para escanear las ips que están en otros hosts tenemos las siguientes maneras:</p>
 <ol>
-  <li>```shell
-use auxiliary/scanner/portscan/tcp
-set RHOSTS 10.10.0.0/24
-set PORTS 21-140
-set threads 10
-run</li>
-  <li>use post/windows/gather/arp_scanner #Solo funciona en Windows, en Linux da error
-set session 2
-set rhosts 10.10.0.0/24
-run
-```</li>
+  <li>Port Scanner</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>use auxiliary/scanner/portscan/tcp
+    <span class="nb">set </span>RHOSTS 10.10.0.0/24
+    <span class="nb">set </span>PORTS 21-140
+    <span class="nb">set </span>threads 10
+    run
+</pre></td></tr></tbody></table></code></div></div>
+<ol>
+  <li>Arp Scanner
+    <div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>use post/windows/gather/arp_scanner <span class="c">#Solo funciona en Windows, en Linux da error</span>
+ <span class="nb">set </span>session 2
+ <span class="nb">set </span>rhosts 10.10.0.0/24
+ run
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
   <li>Para este caso vamos hacer uso de un script el cuál permite hacer el escaneo de forma más rápida y debemos colocarlo dentro del equipo falg4.</li>
 </ol>
 
