@@ -537,14 +537,17 @@ use post/multi/manage/autoroute
 ```
 ### Formas de analizar ips de otro host
 Para escanear las ips que están en otros hosts tenemos las siguientes maneras:
-1. 
+1. Port Scanner
+
 ```shell
 use auxiliary/scanner/portscan/tcp
     set RHOSTS 10.10.0.0/24
     set PORTS 21-140
     set threads 10
     run
-2. 
+```
+2. Arp Scanner
+```shell
 use post/windows/gather/arp_scanner #Solo funciona en Windows, en Linux da error
     set session 2
     set rhosts 10.10.0.0/24
