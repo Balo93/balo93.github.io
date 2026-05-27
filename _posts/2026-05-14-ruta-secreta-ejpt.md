@@ -316,7 +316,7 @@ use exploit/multi/handler
         hashdump #hashes de usuarios
 nano hashes.txt
     #Copiar y pegar
-cat -d ":" -f 4 hashes.txt    
+cut -d ":" -f 4 hashes.txt    
 ```
 Con esa combinación de los hashes podemos colocar todos en crackstation para ver cuáles puede descifrar.
 ![Crackstation](/assets/img/Primer-Blog/ruta-secreta/crackstation.png){: width=auto }
