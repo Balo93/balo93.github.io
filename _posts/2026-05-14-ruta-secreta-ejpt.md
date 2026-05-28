@@ -364,7 +364,7 @@ getuid
 hashdump
 
 nano hashes.txt
-cat -d ":" -f 4 hashes.txt
+cut -d ":" -f 4 hashes.txt
 
 load kiwi
     creds_wdigest
