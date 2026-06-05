@@ -1,6 +1,6 @@
 ---
 title: "MITRE ATT&CK: El traductor universal del comportamiento adversario"
-date: 2026-06-05 02:07:00 -0500
+date: 2026-06-05 02:10:00 -0500
 categories: [Ciberseguridad, Metodologías]
 tags: [mitre-attack, threat-intelligence, red-team, frameworks, tryhackme]
 series: Metodologías de Pentesting de TryHackMe

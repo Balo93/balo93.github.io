@@ -1,6 +1,6 @@
 ---
 title: "Frameworks Especializados: Cuando el contexto define las reglas del juego"
-date: 2026-06-05 02:10:00 -0500
+date: 2026-06-05 02:05:00 -0500
 categories: [Ciberseguridad, Metodologías]
 tags: [mastg, pci-dss, csa, compliance, frameworks, tryhackme]
 series: Metodologías de Pentesting de TryHackMe

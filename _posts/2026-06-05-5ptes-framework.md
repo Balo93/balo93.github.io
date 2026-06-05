@@ -1,6 +1,6 @@
 ---
 title: "PTES: El mapa de ruta real para auditorías de principio a fin"
-date: 2026-06-05 02:04:00 -0500
+date: 2026-06-05 02:20:00 -0500
 categories: [Ciberseguridad, Metodologías]
 tags: [ptes, pentesting, workflow, frameworks, tryhackme]
 series: Metodologías de Pentesting de TryHackMe

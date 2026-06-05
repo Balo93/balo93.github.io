@@ -1,6 +1,6 @@
 ---
 title: "Criterios de Selección: ¿Qué framework aplicar en cada auditoría?"
-date: 2026-06-05 02:12:00 -0500
+date: 2026-06-05 02:00:00 -0500
 categories: [Ciberseguridad, Metodologías]
 tags: [pentesting, frameworks, compliance, consulting, tryhackme]
 series: Metodologías de Pentesting de TryHackMe

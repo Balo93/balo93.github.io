@@ -1,6 +1,6 @@
 ---
 title: "ISSAF: Lecciones de una metodología clásica y el modelo de 9 pasos"
-date: 2026-06-05 02:05:00 -0500
+date: 2026-06-05 02:15:00 -0500
 categories: [Ciberseguridad, Metodologías]
 tags: [issaf, pentesting, kill-chain, frameworks, tryhackme]
 series: Metodologías de Pentesting de TryHackMe

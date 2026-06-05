@@ -1,6 +1,6 @@
 ---
 title: "OSSTMM: El enfoque científico y matemático del Pentesting"
-date: 2026-06-05 02:00:00 -0500
+date: 2026-06-05 02:35:00 -0500
 categories: [Ciberseguridad, Metodologías]
 series: Metodologías de Pentesting de TryHackMe
 tags: [osstmm, pentesting, frameworks, compliance, tryhackme]

@@ -1,6 +1,6 @@
 ---
 title: "Metodologías de Pentesting: ¿Por qué no basta con saber atacar?"
-date: 2026-06-05 01:50:00 -0500
+date: 2026-06-05 02:39:00 -0500
 categories: [Ciberseguridad, Metodologías]
 tags: [pentesting, frameworks, compliance, tryhackme]
 series: Metodologías de Pentesting de TryHackMe
