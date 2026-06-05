@@ -4,7 +4,7 @@
   <id>https://balo93.github.io/</id>
   <title>CyberBalo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-05-27T21:40:41-05:00</updated>
+  <updated>2026-06-05T02:36:31-05:00</updated>
   <author>
     <name>Alvaro Gavilanes</name>
     <uri>https://balo93.github.io/</uri>
@@ -20,143 +20,131 @@
 
   
   <entry>
-    <title>La ruta secreta para la certificación eJPT</title>
-    <link href="https://balo93.github.io/posts/ruta-secreta-ejpt/" rel="alternate" type="text/html" title="La ruta secreta para la certificación eJPT" />
-    <published>2026-05-14T21:47:00-05:00</published>
+    <title>Criterios de Selección: ¿Qué framework aplicar en cada auditoría?</title>
+    <link href="https://balo93.github.io/posts/9criterios-seleccion/" rel="alternate" type="text/html" title="Criterios de Selección: ¿Qué framework aplicar en cada auditoría?" />
+    <published>2026-06-05T02:12:00-05:00</published>
   
-    <updated>2026-05-27T21:39:17-05:00</updated>
+    <updated>2026-06-05T02:12:00-05:00</updated>
   
-    <id>https://balo93.github.io/posts/ruta-secreta-ejpt/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/ruta-secreta-ejpt/" />
+    <id>https://balo93.github.io/posts/9criterios-seleccion/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/9criterios-seleccion/" />
     <author>
       <name>Alvaro Gavilanes</name>
     </author>
 
   
     
-    <category term="Pentesting" />
+    <category term="Ciberseguridad" />
     
-    <category term="Windows Security" />
-    
-    <category term="Post-Exploitation" />
+    <category term="Metodologías" />
     
   
 
-  <summary>Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows.</summary>
+  <summary>A lo largo de esta serie hemos analizado diferentes metodologías y bases de conocimiento, cada una con su propia filosofía, estructura y fortalezas. Sin embargo, conocer qué hace cada framework no nos dice automáticamente cuál debemos elegir cuando estamos frente a un cliente real.  En la práctica, la selección del framework es una de las primeras y más importantes decisiones que toma un pentes...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Resolución de Laboratorios Parte 2</title>
-    <link href="https://balo93.github.io/posts/laboratorios-parte2/" rel="alternate" type="text/html" title="Resolución de Laboratorios Parte 2" />
-    <published>2026-05-09T11:38:00-05:00</published>
+    <title>Frameworks Especializados: Cuando el contexto define las reglas del juego</title>
+    <link href="https://balo93.github.io/posts/8frameworks-especializados/" rel="alternate" type="text/html" title="Frameworks Especializados: Cuando el contexto define las reglas del juego" />
+    <published>2026-06-05T02:10:00-05:00</published>
   
-    <updated>2026-05-09T11:38:00-05:00</updated>
+    <updated>2026-06-05T02:10:00-05:00</updated>
   
-    <id>https://balo93.github.io/posts/laboratorios-parte2/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/laboratorios-parte2/" />
+    <id>https://balo93.github.io/posts/8frameworks-especializados/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/8frameworks-especializados/" />
     <author>
       <name>Alvaro Gavilanes</name>
     </author>
 
   
     
-    <category term="Pentesting" />
+    <category term="Ciberseguridad" />
     
-    <category term="Windows Security" />
-    
-    <category term="Post-Exploitation" />
+    <category term="Metodologías" />
     
   
 
-  <summary>Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows.</summary>
+  <summary>Hasta ahora hemos analizado los frameworks core que todo tester junior o analista va a encontrar en su camino corporativo. Sin embargo, el panorama de la ciberseguridad no se detiene ahí. Dependiendo de la industria, la plataforma técnica o el entorno regulatorio en el que opere tu cliente, las metodologías generales pueden quedarse cortas.  En esta entrega de la serie, haremos un recorrido por...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Resolución de Laboratorios</title>
-    <link href="https://balo93.github.io/posts/laboratorios-parte1/" rel="alternate" type="text/html" title="Resolución de Laboratorios" />
-    <published>2026-05-05T21:17:00-05:00</published>
+    <title>MITRE ATT&amp;CK: El traductor universal del comportamiento adversario</title>
+    <link href="https://balo93.github.io/posts/7mitre-attack/" rel="alternate" type="text/html" title="MITRE ATT&amp;amp;CK: El traductor universal del comportamiento adversario" />
+    <published>2026-06-05T02:07:00-05:00</published>
   
-    <updated>2026-05-05T21:17:00-05:00</updated>
+    <updated>2026-06-05T02:07:00-05:00</updated>
   
-    <id>https://balo93.github.io/posts/laboratorios-parte1/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/laboratorios-parte1/" />
+    <id>https://balo93.github.io/posts/7mitre-attack/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/7mitre-attack/" />
     <author>
       <name>Alvaro Gavilanes</name>
     </author>
 
   
     
-    <category term="Pentesting" />
+    <category term="Ciberseguridad" />
     
-    <category term="Windows Security" />
-    
-    <category term="Post-Exploitation" />
+    <category term="Metodologías" />
     
   
 
-  <summary>Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows.</summary>
+  <summary>Imagina este escenario: acabas de terminar un pentesting impecable siguiendo la metodología PTES. Tu reporte documenta que lograste el acceso inicial mediante un correo de phishing, escalaste privilegios explotando un servicio mal configurado, te moviste lateralmente con credenciales robadas y exfiltraste datos sensibles.  Al entregar los resultados, el cliente te hace una pregunta engañosament...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Pentesting en Windows: De la Explotación a la Post-Explotación</title>
-    <link href="https://balo93.github.io/posts/escalacion-privilegios/" rel="alternate" type="text/html" title="Pentesting en Windows: De la Explotación a la Post-Explotación" />
-    <published>2026-05-02T12:03:00-05:00</published>
+    <title>ISSAF: Lecciones de una metodología clásica y el modelo de 9 pasos</title>
+    <link href="https://balo93.github.io/posts/6issaf-framework/" rel="alternate" type="text/html" title="ISSAF: Lecciones de una metodología clásica y el modelo de 9 pasos" />
+    <published>2026-06-05T02:05:00-05:00</published>
   
-    <updated>2026-05-02T12:03:00-05:00</updated>
+    <updated>2026-06-05T02:05:00-05:00</updated>
   
-    <id>https://balo93.github.io/posts/escalacion-privilegios/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/escalacion-privilegios/" />
+    <id>https://balo93.github.io/posts/6issaf-framework/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/6issaf-framework/" />
     <author>
       <name>Alvaro Gavilanes</name>
     </author>
 
   
     
-    <category term="Pentesting" />
+    <category term="Ciberseguridad" />
     
-    <category term="Windows Security" />
-    
-    <category term="Post-Exploitation" />
+    <category term="Metodologías" />
     
   
 
-  <summary>Guía completa de laboratorios: explotación de BadBlue, técnicas de pivoting, persistencia con RDP y escalación de privilegios en Windows.</summary>
+  <summary>¿Alguna vez has estudiado un libro técnico antiguo y has descubierto que, a pesar de los años, su lógica central sigue siendo totalmente válida? En ciberseguridad, los exploits y las herramientas tienen una fecha de caducidad muy corta, pero las metodologías bien diseñadas pueden sobrevivir a las tecnologías para las que fueron creadas. El Information Systems Security Assessment Framework (ISSA...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Explotación y Post Explotación</title>
-    <link href="https://balo93.github.io/posts/explotacion-y-post-explotacion/" rel="alternate" type="text/html" title="Explotación y Post Explotación" />
-    <published>2026-04-20T21:39:00-05:00</published>
+    <title>PTES: El mapa de ruta real para auditorías de principio a fin</title>
+    <link href="https://balo93.github.io/posts/5ptes-framework/" rel="alternate" type="text/html" title="PTES: El mapa de ruta real para auditorías de principio a fin" />
+    <published>2026-06-05T02:04:00-05:00</published>
   
-    <updated>2026-05-11T01:31:59-05:00</updated>
+    <updated>2026-06-05T02:04:00-05:00</updated>
   
-    <id>https://balo93.github.io/posts/explotacion-y-post-explotacion/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/explotacion-y-post-explotacion/" />
+    <id>https://balo93.github.io/posts/5ptes-framework/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/5ptes-framework/" />
     <author>
       <name>Alvaro Gavilanes</name>
     </author>
 
   
     
-    <category term="Hacking" />
+    <category term="Ciberseguridad" />
     
-    <category term="Vulnerabilidades" />
-    
-    <category term="Explotación" />
-    
-    <category term="Pivoting" />
+    <category term="Metodologías" />
     
   
 
-  <summary>Laboratorios.</summary>
+  <summary>Ya hemos analizado frameworks enfocados en métricas científicas matemáticas (OSSTMM), en la seguridad profunda de aplicaciones web (OWASP WSTG) y en los estrictos estándares gubernamentales (NIST SP 800-115). Pero aquí hay una pregunta clave: Si te contrataran mañana para un pentesting estándar contra una red corporativa, ¿cuál framework refleja mejor lo que harás desde la primera llamada con e...</summary>
 
   </entry>
 
