@@ -4,7 +4,7 @@
   <id>https://balo93.github.io/</id>
   <title>CyberBalo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-06-05T02:36:31-05:00</updated>
+  <updated>2026-06-05T02:41:57-05:00</updated>
   <author>
     <name>Alvaro Gavilanes</name>
     <uri>https://balo93.github.io/</uri>
@@ -20,14 +20,14 @@
 
   
   <entry>
-    <title>Criterios de Selección: ¿Qué framework aplicar en cada auditoría?</title>
-    <link href="https://balo93.github.io/posts/9criterios-seleccion/" rel="alternate" type="text/html" title="Criterios de Selección: ¿Qué framework aplicar en cada auditoría?" />
-    <published>2026-06-05T02:12:00-05:00</published>
+    <title>Metodologías de Pentesting: ¿Por qué no basta con saber atacar?</title>
+    <link href="https://balo93.github.io/posts/1introduccion-metodolog%C3%ADas/" rel="alternate" type="text/html" title="Metodologías de Pentesting: ¿Por qué no basta con saber atacar?" />
+    <published>2026-06-05T02:39:00-05:00</published>
   
-    <updated>2026-06-05T02:12:00-05:00</updated>
+    <updated>2026-06-05T02:41:23-05:00</updated>
   
-    <id>https://balo93.github.io/posts/9criterios-seleccion/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/9criterios-seleccion/" />
+    <id>https://balo93.github.io/posts/1introduccion-metodolog%C3%ADas/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/1introduccion-metodolog%C3%ADas/" />
     <author>
       <name>Alvaro Gavilanes</name>
     </author>
@@ -40,20 +40,20 @@
     
   
 
-  <summary>A lo largo de esta serie hemos analizado diferentes metodologías y bases de conocimiento, cada una con su propia filosofía, estructura y fortalezas. Sin embargo, conocer qué hace cada framework no nos dice automáticamente cuál debemos elegir cuando estamos frente a un cliente real.  En la práctica, la selección del framework es una de las primeras y más importantes decisiones que toma un pentes...</summary>
+  <summary>Cuando empezamos en el mundo del hacking, es común pensar que todo se reduce a lanzar exploits, encontrar vulnerabilidades y conseguir acceso (obtener nuestra ansiada shell). Sin embargo, en el ámbito profesional y corporativo, un pentester no es un atacante caótico, es un auditor.  Imagina a un inspector de edificios: él no camina por los pasillos esperando “tener la suerte” de ver una grieta....</summary>
 
   </entry>
 
   
   <entry>
-    <title>Frameworks Especializados: Cuando el contexto define las reglas del juego</title>
-    <link href="https://balo93.github.io/posts/8frameworks-especializados/" rel="alternate" type="text/html" title="Frameworks Especializados: Cuando el contexto define las reglas del juego" />
-    <published>2026-06-05T02:10:00-05:00</published>
+    <title>OSSTMM: El enfoque científico y matemático del Pentesting</title>
+    <link href="https://balo93.github.io/posts/2osstmm-framework/" rel="alternate" type="text/html" title="OSSTMM: El enfoque científico y matemático del Pentesting" />
+    <published>2026-06-05T02:35:00-05:00</published>
   
-    <updated>2026-06-05T02:10:00-05:00</updated>
+    <updated>2026-06-05T02:41:23-05:00</updated>
   
-    <id>https://balo93.github.io/posts/8frameworks-especializados/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/8frameworks-especializados/" />
+    <id>https://balo93.github.io/posts/2osstmm-framework/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/2osstmm-framework/" />
     <author>
       <name>Alvaro Gavilanes</name>
     </author>
@@ -66,20 +66,20 @@
     
   
 
-  <summary>Hasta ahora hemos analizado los frameworks core que todo tester junior o analista va a encontrar en su camino corporativo. Sin embargo, el panorama de la ciberseguridad no se detiene ahí. Dependiendo de la industria, la plataforma técnica o el entorno regulatorio en el que opere tu cliente, las metodologías generales pueden quedarse cortas.  En esta entrega de la serie, haremos un recorrido por...</summary>
+  <summary>Hay una frase muy famosa en el mundo de la ingeniería que dice: “No puedes gestionar lo que no puedes medir”. En la ingeniería civil, un profesional no define si un puente es seguro basándose en su intuición o en “un presentimiento”; utiliza cálculos, datos y métricas exactas.  Sin embargo, en el pentesting clásico, los reportes suelen entregarse llenos de narrativas subjetivas (“en mi opinión,...</summary>
 
   </entry>
 
   
   <entry>
-    <title>MITRE ATT&amp;CK: El traductor universal del comportamiento adversario</title>
-    <link href="https://balo93.github.io/posts/7mitre-attack/" rel="alternate" type="text/html" title="MITRE ATT&amp;amp;CK: El traductor universal del comportamiento adversario" />
-    <published>2026-06-05T02:07:00-05:00</published>
+    <title>OWASP WSTG: La guía definitiva para auditorías Web profesionales</title>
+    <link href="https://balo93.github.io/posts/3owasp-wstg/" rel="alternate" type="text/html" title="OWASP WSTG: La guía definitiva para auditorías Web profesionales" />
+    <published>2026-06-05T02:30:00-05:00</published>
   
-    <updated>2026-06-05T02:07:00-05:00</updated>
+    <updated>2026-06-05T02:41:23-05:00</updated>
   
-    <id>https://balo93.github.io/posts/7mitre-attack/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/7mitre-attack/" />
+    <id>https://balo93.github.io/posts/3owasp-wstg/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/3owasp-wstg/" />
     <author>
       <name>Alvaro Gavilanes</name>
     </author>
@@ -92,20 +92,20 @@
     
   
 
-  <summary>Imagina este escenario: acabas de terminar un pentesting impecable siguiendo la metodología PTES. Tu reporte documenta que lograste el acceso inicial mediante un correo de phishing, escalaste privilegios explotando un servicio mal configurado, te moviste lateralmente con credenciales robadas y exfiltraste datos sensibles.  Al entregar los resultados, el cliente te hace una pregunta engañosament...</summary>
+  <summary>Imagina que estás auditando una tienda en línea. La aplicación tiene registro de usuarios, buscador de productos, carrito de compras, pasarela de pagos y rastreo de envíos. ¿Por dónde empiezas? ¿Pruebas el formulario de login? ¿La barra de búsqueda? ¿La API de pagos?  Con docenas de superficies de ataque en una sola aplicación web, es increíblemente fácil cometer dos errores: probar lo mismo do...</summary>
 
   </entry>
 
   
   <entry>
-    <title>ISSAF: Lecciones de una metodología clásica y el modelo de 9 pasos</title>
-    <link href="https://balo93.github.io/posts/6issaf-framework/" rel="alternate" type="text/html" title="ISSAF: Lecciones de una metodología clásica y el modelo de 9 pasos" />
-    <published>2026-06-05T02:05:00-05:00</published>
+    <title>NIST SP 800-115: El estándar institucional y gubernamental de evaluación</title>
+    <link href="https://balo93.github.io/posts/4nist-sp-800-115/" rel="alternate" type="text/html" title="NIST SP 800-115: El estándar institucional y gubernamental de evaluación" />
+    <published>2026-06-05T02:25:00-05:00</published>
   
-    <updated>2026-06-05T02:05:00-05:00</updated>
+    <updated>2026-06-05T02:41:23-05:00</updated>
   
-    <id>https://balo93.github.io/posts/6issaf-framework/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/6issaf-framework/" />
+    <id>https://balo93.github.io/posts/4nist-sp-800-115/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/4nist-sp-800-115/" />
     <author>
       <name>Alvaro Gavilanes</name>
     </author>
@@ -118,7 +118,7 @@
     
   
 
-  <summary>¿Alguna vez has estudiado un libro técnico antiguo y has descubierto que, a pesar de los años, su lógica central sigue siendo totalmente válida? En ciberseguridad, los exploits y las herramientas tienen una fecha de caducidad muy corta, pero las metodologías bien diseñadas pueden sobrevivir a las tecnologías para las que fueron creadas. El Information Systems Security Assessment Framework (ISSA...</summary>
+  <summary>Imagina que trabajas como analista de seguridad para una agencia gubernamental o una gran empresa que tiene contratos estatales. Tu organización necesita una auditoría de seguridad, pero los resultados deben dejar conformes a los auditores, cumplir con normativas federales y ser 100% defendibles ante cualquier comité de supervisión.  En este escenario, un reporte de pentesting lleno de comentar...</summary>
 
   </entry>
 
@@ -126,9 +126,9 @@
   <entry>
     <title>PTES: El mapa de ruta real para auditorías de principio a fin</title>
     <link href="https://balo93.github.io/posts/5ptes-framework/" rel="alternate" type="text/html" title="PTES: El mapa de ruta real para auditorías de principio a fin" />
-    <published>2026-06-05T02:04:00-05:00</published>
+    <published>2026-06-05T02:20:00-05:00</published>
   
-    <updated>2026-06-05T02:04:00-05:00</updated>
+    <updated>2026-06-05T02:41:23-05:00</updated>
   
     <id>https://balo93.github.io/posts/5ptes-framework/</id>
     <content type="text/html" src="https://balo93.github.io/posts/5ptes-framework/" />
