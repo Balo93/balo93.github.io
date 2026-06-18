@@ -39,12 +39,12 @@
 <meta property="og:site_name" content="CyberBalo" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-12-29T00:45:00-05:00" />
-<meta property="article:modified_time" content="2026-04-06T23:54:16-05:00" />
+<meta property="article:modified_time" content="2026-06-17T22:31:23-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Reconocimiento Activo: El Arte de Investigar" />
 <meta name="twitter:site" content="@alvarogbalo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-04-06T23:54:16-05:00","datePublished":"2025-12-29T00:45:00-05:00","description":"Guía estratégica para realizar una recolección de información (OSINT) efectiva y ética.","headline":"Reconocimiento Activo: El Arte de Investigar","mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/reconocimiento-activo/"},"url":"https://balo93.github.io/posts/reconocimiento-activo/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-17T22:31:23-05:00","datePublished":"2025-12-29T00:45:00-05:00","description":"Guía estratégica para realizar una recolección de información (OSINT) efectiva y ética.","headline":"Reconocimiento Activo: El Arte de Investigar","mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/reconocimiento-activo/"},"url":"https://balo93.github.io/posts/reconocimiento-activo/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -644,6 +644,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -659,6 +670,28 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -764,13 +797,13 @@
 
 <time
   
-  data-ts="1775537656"
+  data-ts="1781753483"
   data-df="DD/MM/YYYY"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  06/04/2026
+  17/06/2026
 </time>
 
         </span>
@@ -813,9 +846,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="718 palabras"
+  title="1074 palabras"
 >
-  <em>3 min</em> de lectura</span>
+  <em>5 min</em> de lectura</span>
 
         </div>
       </div>
@@ -850,6 +883,43 @@
     <h2 id="reconocimiento-activo-el-arte-de-investigar"><span class="me-2">Reconocimiento Activo: El Arte de Investigar</span><a href="#reconocimiento-activo-el-arte-de-investigar" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>El reconocimiento activo es la fase donde interactuamos directamente con el sistema objetivo para recolectar datos sobre puertos abiertos, servicios, versiones y posibles vulnerabilidades.</p>
+
+<p><strong>Regla fundamental:</strong> Nunca realices reconocimientos activos sin una autorización legal explícita y firmada, como un contrato de pruebas de penetración o un programa de recompensas por detección de errores. El sondeo no autorizado es ilegal en la mayoría de las jurisdicciones.</p>
+
+<hr />
+
+<h2 id="el-navegador-como-herramienta-de-reconocimiento-activo"><span class="me-2">El Navegador como Herramienta de Reconocimiento Activo</span><a href="#el-navegador-como-herramienta-de-reconocimiento-activo" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Durante el reconocimiento activo, el navegador web se transforma en una plataforma de interacción directa y enumeración. El uso de extensiones especializadas permite automatizar la identificación de tecnologías e interceptar el tráfico en tiempo real. Las más eficientes para el flujo de trabajo de un pentester son:</p>
+
+<h3 id="️-extensiones-esenciales-de-auditoría"><span class="me-2">🛠️ Extensiones Esenciales de Auditoría</span><a href="#️-extensiones-esenciales-de-auditoría" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li><strong><a href="https://getfoxyproxy.org/">FoxyProxy</a></strong>: Permite alternar rápidamente el enrutamiento del tráfico entre diferentes proxies locales (como <strong>Burp Suite</strong> o <strong>OWASP ZAP</strong>) y túneles SOCKS5, facilitando la intercepción y análisis de peticiones sobre la marcha.</li>
+  <li><strong><a href="https://github.com/ray-xyz/user-agent-switcher">User-Agent Switcher and Manager</a></strong>: Modifica la cabecera <code class="language-plaintext highlighter-rouge">User-Agent</code> para emular distintos sistemas operativos, dispositivos (como Safari móvil) o navegadores antiguos. Es clave para descubrir endpoints exclusivos de la arquitectura móvil o evadir restricciones básicas.</li>
+  <li><strong><a href="https://www.wappalyzer.com/">Wappalyzer</a> / <a href="https://builtwith.com/">BuiltWith</a></strong>: Analizadores pasivos integrados que identifican el stack tecnológico del objetivo (CMS, frameworks de JavaScript, servidores web, CDN y bases de datos) a medida que interactuamos con la aplicación.</li>
+</ul>
+
+<blockquote class="prompt-info">
+  <p><strong>Otras alternativas ligeras:</strong> Si buscas diversificar tus fuentes de huellas digitales (<em>fingerprinting</em>), utilidades como <strong>WhatRuns</strong> o <strong>Library Detector</strong> (especializada en frameworks de JS) son excelentes complementos para validar los hallazgos en tu suite de herramientas.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="️-el-factor-waf-el-peligro-de-las-anomalías-de-comportamiento"><span class="me-2">⚠️ El Factor WAF: El Peligro de las Anomalías de Comportamiento</span><a href="#️-el-factor-waf-el-peligro-de-las-anomalías-de-comportamiento" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Interactuar activamente mediante el navegador no significa que seamos invisibles. Los Firewalls de Aplicación Web (<strong>WAF</strong>) modernos y los sistemas de detección de endpoints analizan patrones de comportamiento específicos en la capa de aplicación (<code class="language-plaintext highlighter-rouge">L7</code>).</p>
+
+<p>Las soluciones de seguridad automatizadas buscan activamente anomalías como:</p>
+<ol>
+  <li>Cambios drásticos o rápidos en las cadenas de <code class="language-plaintext highlighter-rouge">User-Agent</code>.</li>
+  <li>Modificaciones inusuales en las cabeceras HTTP estándar.</li>
+  <li>El uso intensivo de las Herramientas para Desarrolladores (<em>DevTools</em>) combinado con ráfagas de peticiones rápidas.</li>
+</ol>
+
+<blockquote class="prompt-warning">
+  <p><strong>Regla de Oro en Pentesting:</strong> Al realizar auditorías web, el objetivo principal es <strong>imitar el comportamiento de un usuario legítimo</strong> en la medida de lo posible para evitar el bloqueo prematuro por parte de las reglas heurísticas del WAF.</p>
+</blockquote>
 
 <hr />
 
@@ -1205,6 +1275,27 @@ services                  # Revisar servicios
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/reconocimiento-pasivo/">Reconocimiento Pasivo: El Arte de Investigar sin ser Visto</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/reconocimiento-activo/">Reconocimiento Activo: El Arte de Investigar</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/ataque-protocolos-mitigacion/">Ataque a protocolos de red y mitigación</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/9criterios-seleccion/">Criterios de Selección: ¿Qué framework aplicar en cada auditoría?</a>
         </li>
       
@@ -1213,27 +1304,6 @@ services                  # Revisar servicios
         
         <li class="text-truncate lh-lg">
           <a href="/posts/8frameworks-especializados/">Frameworks Especializados: Cuando el contexto define las reglas del juego</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/7mitre-attack/">MITRE ATT&CK: El traductor universal del comportamiento adversario</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/6issaf-framework/">ISSAF: Lecciones de una metodología clásica y el modelo de 9 pasos</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/5ptes-framework/">PTES: El mapa de ruta real para auditorías de principio a fin</a>
         </li>
       
     </ul>
@@ -1482,60 +1552,6 @@ services                  # Revisar servicios
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1550,122 +1566,6 @@ services                  # Revisar servicios
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1805,6 +1705,160 @@ services                  # Revisar servicios
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -1832,6 +1886,50 @@ services                  # Revisar servicios
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2089,6 +2187,11 @@ services                  # Revisar servicios
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -2121,6 +2224,11 @@ services                  # Revisar servicios
     
     
       
+    
+  
+    
+    
+    
     
   
     
@@ -2239,10 +2347,10 @@ services                  # Revisar servicios
         <a class="post-tag btn btn-outline-primary" href="/tags/metasploit/">Metasploit</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/hydra/">Hydra</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/pentesting/">pentesting</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/pentesting/">pentesting</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/hydra/">Hydra</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/compliance/">compliance</a>
@@ -2445,11 +2553,11 @@ services                  # Revisar servicios
 
 <time
   
-  data-ts="1766987100"
+  data-ts="1766814300"
   data-df="DD/MM/YYYY"
   
 >
-  29/12/2025
+  27/12/2025
 </time>
 
               <h4 class="pt-0 my-2">Recomendaciones eJPT</h4>
@@ -2503,11 +2611,11 @@ services                  # Revisar servicios
 
   
     <a
-      href="/posts/Recomendaciones-ejpt/"
+      href="/posts/reconocimiento-pasivo/"
       class="btn btn-outline-primary"
       aria-label="Anterior"
     >
-      <p>Recomendaciones eJPT</p>
+      <p>Reconocimiento Pasivo: El Arte de Investigar sin ser Visto</p>
     </a>
   
 
@@ -2809,60 +2917,6 @@ services                  # Revisar servicios
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2877,122 +2931,6 @@ services                  # Revisar servicios
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -3132,6 +3070,160 @@ services                  # Revisar servicios
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -3159,6 +3251,50 @@ services                  # Revisar servicios
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -3416,6 +3552,11 @@ services                  # Revisar servicios
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -3448,6 +3589,11 @@ services                  # Revisar servicios
     
     
       
+    
+  
+    
+    
+    
     
   
     
@@ -3566,10 +3712,10 @@ services                  # Revisar servicios
         <a class="post-tag btn btn-outline-primary" href="/tags/metasploit/">Metasploit</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/hydra/">Hydra</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/pentesting/">pentesting</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/pentesting/">pentesting</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/hydra/">Hydra</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/compliance/">compliance</a>

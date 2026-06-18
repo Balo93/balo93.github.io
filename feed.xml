@@ -4,7 +4,7 @@
   <id>https://balo93.github.io/</id>
   <title>CyberBalo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-06-05T02:41:57-05:00</updated>
+  <updated>2026-06-17T22:33:10-05:00</updated>
   <author>
     <name>Alvaro Gavilanes</name>
     <uri>https://balo93.github.io/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Ataque a protocolos de red y mitigación</title>
+    <link href="https://balo93.github.io/posts/ataque-protocolos-mitigacion/" rel="alternate" type="text/html" title="Ataque a protocolos de red y mitigación" />
+    <published>2026-06-17T22:15:00-05:00</published>
+  
+    <updated>2026-06-17T22:15:00-05:00</updated>
+  
+    <id>https://balo93.github.io/posts/ataque-protocolos-mitigacion/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/ataque-protocolos-mitigacion/" />
+    <author>
+      <name>Alvaro Gavilanes</name>
+    </author>
+
+  
+    
+    <category term="Ciberseguridad" />
+    
+    <category term="Metodologías" />
+    
+  
+
+  <summary>🕵️‍♂️ Análisis Profundo: Sniffing, MITM y Ataques de Contraseña  En esta sección de nuestra preparación, profundizaremos en la mecánica de los tres vectores de ataque más comunes a nivel de red, sus escenarios de riesgo en el ecosistema moderno y las contramedidas criptográficas esenciales para neutralizarlos.    1. Sniffing Attacks (Intercepción de Tráfico)  El Sniffing consiste en el uso de h...</summary>
+
+  </entry>
 
   
   <entry>
@@ -119,32 +145,6 @@
   
 
   <summary>Imagina que trabajas como analista de seguridad para una agencia gubernamental o una gran empresa que tiene contratos estatales. Tu organización necesita una auditoría de seguridad, pero los resultados deben dejar conformes a los auditores, cumplir con normativas federales y ser 100% defendibles ante cualquier comité de supervisión.  En este escenario, un reporte de pentesting lleno de comentar...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>PTES: El mapa de ruta real para auditorías de principio a fin</title>
-    <link href="https://balo93.github.io/posts/5ptes-framework/" rel="alternate" type="text/html" title="PTES: El mapa de ruta real para auditorías de principio a fin" />
-    <published>2026-06-05T02:20:00-05:00</published>
-  
-    <updated>2026-06-05T02:41:23-05:00</updated>
-  
-    <id>https://balo93.github.io/posts/5ptes-framework/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/5ptes-framework/" />
-    <author>
-      <name>Alvaro Gavilanes</name>
-    </author>
-
-  
-    
-    <category term="Ciberseguridad" />
-    
-    <category term="Metodologías" />
-    
-  
-
-  <summary>Ya hemos analizado frameworks enfocados en métricas científicas matemáticas (OSSTMM), en la seguridad profunda de aplicaciones web (OWASP WSTG) y en los estrictos estándares gubernamentales (NIST SP 800-115). Pero aquí hay una pregunta clave: Si te contrataran mañana para un pentesting estándar contra una red corporativa, ¿cuál framework refleja mejor lo que harás desde la primera llamada con e...</summary>
 
   </entry>
 
