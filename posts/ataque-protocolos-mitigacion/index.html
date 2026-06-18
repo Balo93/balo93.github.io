@@ -41,14 +41,14 @@
 <meta property="og:image:alt" content="Protocolos y Servicios" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-06-17T22:15:00-05:00" />
-<meta property="article:modified_time" content="2026-06-17T22:15:00-05:00" />
+<meta property="article:modified_time" content="2026-06-17T22:54:01-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://balo93.github.io/assets/img/Primer-Blog/ataque.png" />
 <meta name="twitter:image:alt" content="Protocolos y Servicios" />
 <meta name="twitter:title" content="Ataque a protocolos de red y mitigación" />
 <meta name="twitter:site" content="@alvarogbalo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-17T22:15:00-05:00","datePublished":"2026-06-17T22:15:00-05:00","description":"🕵️‍♂️ Análisis Profundo: Sniffing, MITM y Ataques de Contraseña","headline":"Ataque a protocolos de red y mitigación","image":{"alt":"Protocolos y Servicios","url":"https://balo93.github.io/assets/img/Primer-Blog/ataque.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/ataque-protocolos-mitigacion/"},"url":"https://balo93.github.io/posts/ataque-protocolos-mitigacion/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-17T22:54:01-05:00","datePublished":"2026-06-17T22:15:00-05:00","description":"🕵️‍♂️ Análisis Profundo: Sniffing, MITM y Ataques de Contraseña","headline":"Ataque a protocolos de red y mitigación","image":{"alt":"Protocolos y Servicios","url":"https://balo93.github.io/assets/img/Primer-Blog/ataque.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://balo93.github.io/posts/ataque-protocolos-mitigacion/"},"url":"https://balo93.github.io/posts/ataque-protocolos-mitigacion/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -679,6 +679,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -815,6 +837,32 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -828,11 +876,6 @@
     
 
     
-  
-
-  
-  
-
   
 
   
@@ -884,6 +927,29 @@
       </span>
 
       
+        <span>
+          Actualizado
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1781754841"
+  data-df="DD/MM/YYYY"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  17/06/2026
+</time>
+
+        </span>
+      
 
       
         
@@ -931,9 +997,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1124 palabras"
+  title="1416 palabras"
 >
-  <em>6 min</em> de lectura</span>
+  <em>7 min</em> de lectura</span>
 
         </div>
       </div>
@@ -1105,9 +1171,114 @@ tcpdump <span class="nt">-r</span> captura.pcap <span class="nt">-A</span>
 
 <hr />
 
-<h2 id="4-ataques-contra-mecanismos-de-contraseña"><span class="me-2">4. Ataques contra Mecanismos de Contraseña</span><a href="#4-ataques-contra-mecanismos-de-contraseña" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="4-auditoría-de-servicios-y-mapeo-de-puertos"><span class="me-2">4. Auditoría de Servicios y Mapeo de Puertos</span><a href="#4-auditoría-de-servicios-y-mapeo-de-puertos" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Los ataques contra el factor de autenticación “algo que sabes” han evolucionado drásticamente gracias a la masificación de bases de datos de credenciales filtradas.</p>
+<p>En el panorama actual de la seguridad informática, la visibilidad de nuestros activos y el endurecimiento de las configuraciones de red (hardening) son los pilares fundamentales para prevenir intrusiones. Para auditar correctamente una infraestructura, es fundamental conocer los puertos estándar, sus aplicaciones y si viajan de manera segura o expuesta:</p>
+
+<h3 id="referencia-de-protocolos-y-puertos-protocol-and-port-reference"><span class="me-2">Referencia de Protocolos y Puertos (Protocol and Port Reference)</span><a href="#referencia-de-protocolos-y-puertos-protocol-and-port-reference" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Protocolo</th>
+      <th style="text-align: left">Puerto TCP</th>
+      <th style="text-align: left">Aplicación(es)</th>
+      <th style="text-align: left">Seguridad de Datos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>FTP</strong></td>
+      <td style="text-align: left">21</td>
+      <td style="text-align: left">Transferencia de archivos</td>
+      <td style="text-align: left">Texto plano (Cleartext)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>FTPS</strong></td>
+      <td style="text-align: left">990</td>
+      <td style="text-align: left">Transferencia de archivos</td>
+      <td style="text-align: left">Cifrado (TLS implícito)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>HTTP</strong></td>
+      <td style="text-align: left">80</td>
+      <td style="text-align: left">World Wide Web</td>
+      <td style="text-align: left">Texto plano (Cleartext)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>HTTPS</strong></td>
+      <td style="text-align: left">443</td>
+      <td style="text-align: left">World Wide Web</td>
+      <td style="text-align: left">Cifrado (TLS implícito)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>IMAP</strong></td>
+      <td style="text-align: left">143</td>
+      <td style="text-align: left">Correo electrónico (MDA)</td>
+      <td style="text-align: left">Texto plano (Cleartext)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>IMAPS</strong></td>
+      <td style="text-align: left">993</td>
+      <td style="text-align: left">Correo electrónico (MDA)</td>
+      <td style="text-align: left">Cifrado (TLS implícito)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>POP3</strong></td>
+      <td style="text-align: left">110</td>
+      <td style="text-align: left">Correo electrónico (MDA)</td>
+      <td style="text-align: left">Texto plano (Cleartext)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>POP3S</strong></td>
+      <td style="text-align: left">995</td>
+      <td style="text-align: left">Correo electrónico (MDA)</td>
+      <td style="text-align: left">Cifrado (TLS implícito)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SFTP</strong></td>
+      <td style="text-align: left">22</td>
+      <td style="text-align: left">Transferencia de archivos</td>
+      <td style="text-align: left">Cifrado (SSH)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SMTP</strong></td>
+      <td style="text-align: left">25</td>
+      <td style="text-align: left">Correo electrónico (MTA)</td>
+      <td style="text-align: left">Texto plano (Cleartext)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SMTP Submission</strong></td>
+      <td style="text-align: left">587</td>
+      <td style="text-align: left">Correo electrónico (MTA, envío de cliente)</td>
+      <td style="text-align: left">STARTTLS*</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SMTPS</strong></td>
+      <td style="text-align: left">465</td>
+      <td style="text-align: left">Correo electrónico (MTA)</td>
+      <td style="text-align: left">Cifrado (TLS implícito)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>SSH</strong></td>
+      <td style="text-align: left">22</td>
+      <td style="text-align: left">Acceso remoto y transferencia de archivos</td>
+      <td style="text-align: left">Cifrado</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Telnet</strong></td>
+      <td style="text-align: left">23</td>
+      <td style="text-align: left">Acceso remoto</td>
+      <td style="text-align: left">Texto plano (Cleartext)</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Como se observa, mantener servicios en texto plano (como FTP o Telnet) o permitir mecanismos de autenticación débiles en protocolos cifrados (como contraseñas simples en SSH) convierte a estos puertos en objetivos primarios para ataques automatizados.</p>
+
+<hr />
+<h2 id="5-ataques-contra-mecanismos-de-contraseña"><span class="me-2">5. Ataques contra Mecanismos de Contraseña</span><a href="#5-ataques-contra-mecanismos-de-contraseña" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Los ataques contra el factor de autenticación “algo que sabes” han evolucionado drásticamente gracias a la masificación de bases de datos de credenciales filtradas. Cuando un atacante detecta puertos abiertos (como FTP o SSH), el paso lógico es validar la robustez de las credenciales utilizando la automatización.</p>
 
 <h3 id="tipos-modernos-de-ataque"><span class="me-2">Tipos Modernos de Ataque</span><a href="#tipos-modernos-de-ataque" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1134,31 +1305,13 @@ tcpdump <span class="nt">-r</span> captura.pcap <span class="nt">-A</span>
   </tbody>
 </table></div>
 
-<h3 id="sintaxis-avanzada-en-hydra-para-servicios-comunes"><span class="me-2">Sintaxis Avanzada en Hydra para Servicios Comunes</span><a href="#sintaxis-avanzada-en-hydra-para-servicios-comunes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<hr />
 
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre><span class="c"># Ataque de fuerza bruta contra FTP usando el diccionario RockYou</span>
-hydra <span class="nt">-l</span> mark <span class="nt">-P</span> /usr/share/wordlists/rockyou.txt 10.66.164.238 ftp
+<h3 id="el-vector-de-ataque-automatización-con-hydra"><span class="me-2">El Vector de Ataque: Automatización con Hydra</span><a href="#el-vector-de-ataque-automatización-con-hydra" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<span class="c"># Ataque de fuerza bruta contra SSH para un usuario específico</span>
-hydra <span class="nt">-l</span> frank <span class="nt">-P</span> /usr/share/wordlists/rockyou.txt 10.66.164.238 ssh
+<p>Hydra es una de las herramientas más robustas para simular ataques de diccionario en entornos de auditoría. Para ejecutar estas pruebas de concepto de forma eficiente, es clave dominar sus parámetros principales:</p>
 
-<span class="c"># Ataque de Credential Stuffing (Lista de usuarios + Lista de contraseñas)</span>
-hydra <span class="nt">-L</span> users.txt <span class="nt">-P</span> passwords.txt 10.66.164.238 ssh
-</pre></td></tr></tbody></table></code></div></div>
-
-<h3 id="️-opciones-útiles-de-hydra-useful-hydra-options"><span class="me-2">🛠️ Opciones Útiles de Hydra (Useful Hydra Options)</span><a href="#️-opciones-útiles-de-hydra-useful-hydra-options" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>Para realizar auditorías de contraseñas y simular ataques de fuerza bruta o diccionario, <code class="language-plaintext highlighter-rouge">hydra</code> es una de las herramientas más robustas. A continuación, se detallan sus opciones principales:</p>
+<h4 id="opciones-útiles-de-hydra"><span class="me-2">Opciones Útiles de Hydra</span><a href="#opciones-útiles-de-hydra" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1211,7 +1364,30 @@ hydra <span class="nt">-L</span> users.txt <span class="nt">-P</span> passwords.
   </tbody>
 </table></div>
 
-<h3 id="contramedidas-modernas-y-defensa-en-profundidad"><span class="me-2">Contramedidas Modernas y Defensa en Profundidad</span><a href="#contramedidas-modernas-y-defensa-en-profundidad" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h4 id="ejemplos-prácticos-de-sintaxis-en-hydra"><span class="me-2">Ejemplos Prácticos de Sintaxis en Hydra</span><a href="#ejemplos-prácticos-de-sintaxis-en-hydra" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c"># Ataque de fuerza bruta contra FTP usando el diccionario RockYou</span>
+hydra <span class="nt">-l</span> mark <span class="nt">-P</span> /usr/share/wordlists/rockyou.txt 10.66.164.238 ftp
+
+<span class="c"># Ataque de fuerza bruta contra SSH para un usuario específico</span>
+hydra <span class="nt">-l</span> frank <span class="nt">-P</span> /usr/share/wordlists/rockyou.txt 10.66.164.238 ssh
+
+<span class="c"># Ataque de Credential Stuffing (Lista de usuarios + Lista de contraseñas)</span>
+hydra <span class="nt">-L</span> users.txt <span class="nt">-P</span> passwords.txt 10.66.164.238 ssh <span class="nt">-t</span> 4 <span class="nt">-f</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Si la política de contraseñas es débil o si se permiten métodos obsoletos de autenticación, el compromiso del servidor es inminente. Aquí es donde la seguridad reactiva falla y se vuelve obligatorio implementar un enfoque proactivo.</p>
+
+<h2 id="6-contramedidas-modernas-y-defensa-en-profundidad"><span class="me-2">6. Contramedidas Modernas y Defensa en Profundidad</span><a href="#6-contramedidas-modernas-y-defensa-en-profundidad" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p>La seguridad robusta exige la combinación de controles técnicos en múltiples capas:</p>
 
 <ul class="task-list">
@@ -1363,6 +1539,13 @@ hydra <span class="nt">-L</span> users.txt <span class="nt">-P</span> passwords.
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/ataque-protocolos-mitigacion/">Ataque a protocolos de red y mitigación</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/reconocimiento-pasivo/">Reconocimiento Pasivo: El Arte de Investigar sin ser Visto</a>
         </li>
       
@@ -1371,13 +1554,6 @@ hydra <span class="nt">-L</span> users.txt <span class="nt">-P</span> passwords.
         
         <li class="text-truncate lh-lg">
           <a href="/posts/reconocimiento-activo/">Reconocimiento Activo: El Arte de Investigar</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/ataque-protocolos-mitigacion/">Ataque a protocolos de red y mitigación</a>
         </li>
       
         
