@@ -11,6 +11,37 @@ toc: true
 
 El reconocimiento activo es la fase donde interactuamos directamente con el sistema objetivo para recolectar datos sobre puertos abiertos, servicios, versiones y posibles vulnerabilidades.
 
+**Regla fundamental:** Nunca realices reconocimientos activos sin una autorización legal explícita y firmada, como un contrato de pruebas de penetración o un programa de recompensas por detección de errores. El sondeo no autorizado es ilegal en la mayoría de las jurisdicciones.
+
+---
+
+## El Navegador como Herramienta de Reconocimiento Activo
+
+Durante el reconocimiento activo, el navegador web se transforma en una plataforma de interacción directa y enumeración. El uso de extensiones especializadas permite automatizar la identificación de tecnologías e interceptar el tráfico en tiempo real. Las más eficientes para el flujo de trabajo de un pentester son:
+
+### 🛠️ Extensiones Esenciales de Auditoría
+
+* **[FoxyProxy](https://getfoxyproxy.org/)**: Permite alternar rápidamente el enrutamiento del tráfico entre diferentes proxies locales (como **Burp Suite** o **OWASP ZAP**) y túneles SOCKS5, facilitando la intercepción y análisis de peticiones sobre la marcha.
+* **[User-Agent Switcher and Manager](https://github.com/ray-xyz/user-agent-switcher)**: Modifica la cabecera `User-Agent` para emular distintos sistemas operativos, dispositivos (como Safari móvil) o navegadores antiguos. Es clave para descubrir endpoints exclusivos de la arquitectura móvil o evadir restricciones básicas.
+* **[Wappalyzer](https://www.wappalyzer.com/) / [BuiltWith](https://builtwith.com/)**: Analizadores pasivos integrados que identifican el stack tecnológico del objetivo (CMS, frameworks de JavaScript, servidores web, CDN y bases de datos) a medida que interactuamos con la aplicación.
+
+> **Otras alternativas ligeras:** Si buscas diversificar tus fuentes de huellas digitales (*fingerprinting*), utilidades como **WhatRuns** o **Library Detector** (especializada en frameworks de JS) son excelentes complementos para validar los hallazgos en tu suite de herramientas.
+{: .prompt-info }
+
+---
+
+### ⚠️ El Factor WAF: El Peligro de las Anomalías de Comportamiento
+
+Interactuar activamente mediante el navegador no significa que seamos invisibles. Los Firewalls de Aplicación Web (**WAF**) modernos y los sistemas de detección de endpoints analizan patrones de comportamiento específicos en la capa de aplicación (`L7`).
+
+Las soluciones de seguridad automatizadas buscan activamente anomalías como:
+1. Cambios drásticos o rápidos en las cadenas de `User-Agent`.
+2. Modificaciones inusuales en las cabeceras HTTP estándar.
+3. El uso intensivo de las Herramientas para Desarrolladores (*DevTools*) combinado con ráfagas de peticiones rápidas.
+
+> **Regla de Oro en Pentesting:** Al realizar auditorías web, el objetivo principal es **imitar el comportamiento de un usuario legítimo** en la medida de lo posible para evitar el bloqueo prematuro por parte de las reglas heurísticas del WAF.
+{: .prompt-warning }
+
 ---
 
 ## Comandos Útiles para el Reconocimiento
