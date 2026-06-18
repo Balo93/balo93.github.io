@@ -93,9 +93,34 @@ Para mitigar el sniffing y los ataques MITM en la capa de presentación, la impl
 
 ---
 
-## 4. Ataques contra Mecanismos de Contraseña
+## 4. Auditoría de Servicios y Mapeo de Puertos
 
-Los ataques contra el factor de autenticación "algo que sabes" han evolucionado drásticamente gracias a la masificación de bases de datos de credenciales filtradas.
+En el panorama actual de la seguridad informática, la visibilidad de nuestros activos y el endurecimiento de las configuraciones de red (hardening) son los pilares fundamentales para prevenir intrusiones. Para auditar correctamente una infraestructura, es fundamental conocer los puertos estándar, sus aplicaciones y si viajan de manera segura o expuesta:
+
+### Referencia de Protocolos y Puertos (Protocol and Port Reference)
+
+| Protocolo | Puerto TCP | Aplicación(es) | Seguridad de Datos |
+| :--- | :--- | :--- | :--- |
+| **FTP** | 21 | Transferencia de archivos | Texto plano (Cleartext) |
+| **FTPS** | 990 | Transferencia de archivos | Cifrado (TLS implícito) |
+| **HTTP** | 80 | World Wide Web | Texto plano (Cleartext) |
+| **HTTPS** | 443 | World Wide Web | Cifrado (TLS implícito) |
+| **IMAP** | 143 | Correo electrónico (MDA) | Texto plano (Cleartext) |
+| **IMAPS** | 993 | Correo electrónico (MDA) | Cifrado (TLS implícito) |
+| **POP3** | 110 | Correo electrónico (MDA) | Texto plano (Cleartext) |
+| **POP3S** | 995 | Correo electrónico (MDA) | Cifrado (TLS implícito) |
+| **SFTP** | 22 | Transferencia de archivos | Cifrado (SSH) |
+| **SMTP** | 25 | Correo electrónico (MTA) | Texto plano (Cleartext) |
+| **SMTP Submission** | 587 | Correo electrónico (MTA, envío de cliente) | STARTTLS* |
+| **SMTPS** | 465 | Correo electrónico (MTA) | Cifrado (TLS implícito) |
+| **SSH** | 22 | Acceso remoto y transferencia de archivos | Cifrado |
+| **Telnet** | 23 | Acceso remoto | Texto plano (Cleartext) |
+
+Como se observa, mantener servicios en texto plano (como FTP o Telnet) o permitir mecanismos de autenticación débiles en protocolos cifrados (como contraseñas simples en SSH) convierte a estos puertos en objetivos primarios para ataques automatizados.
+
+---
+## 5. Ataques contra Mecanismos de Contraseña
+Los ataques contra el factor de autenticación "algo que sabes" han evolucionado drásticamente gracias a la masificación de bases de datos de credenciales filtradas. Cuando un atacante detecta puertos abiertos (como FTP o SSH), el paso lógico es validar la robustez de las credenciales utilizando la automatización.
 
 ### Tipos Modernos de Ataque
 
@@ -105,22 +130,13 @@ Los ataques contra el factor de autenticación "algo que sabes" han evolucionado
 | **Password Spraying** | Intento de usar 1 o 2 contraseñas muy comunes (ej. `Welcome2026!`) contra miles de cuentas simultáneamente, evadiendo bloqueos (*lockout*). |
 | **Diccionario y Híbridos** | Uso de listas optimizadas (`SecLists`, `RockYou`) combinadas con reglas de sustitución basadas en patrones de comportamiento humano. |
 
-### Sintaxis Avanzada en Hydra para Servicios Comunes
+---
 
-```bash
-# Ataque de fuerza bruta contra FTP usando el diccionario RockYou
-hydra -l mark -P /usr/share/wordlists/rockyou.txt 10.66.164.238 ftp
+### El Vector de Ataque: Automatización con Hydra
 
-# Ataque de fuerza bruta contra SSH para un usuario específico
-hydra -l frank -P /usr/share/wordlists/rockyou.txt 10.66.164.238 ssh
+Hydra es una de las herramientas más robustas para simular ataques de diccionario en entornos de auditoría. Para ejecutar estas pruebas de concepto de forma eficiente, es clave dominar sus parámetros principales:
 
-# Ataque de Credential Stuffing (Lista de usuarios + Lista de contraseñas)
-hydra -L users.txt -P passwords.txt 10.66.164.238 ssh
-```
-
-### 🛠️ Opciones Útiles de Hydra (Useful Hydra Options)
-
-Para realizar auditorías de contraseñas y simular ataques de fuerza bruta o diccionario, `hydra` es una de las herramientas más robustas. A continuación, se detallan sus opciones principales:
+#### Opciones Útiles de Hydra
 
 | Opción | Descripción |
 | :--- | :--- |
@@ -135,7 +151,21 @@ Para realizar auditorías de contraseñas y simular ataques de fuerza bruta o di
 | `-f` | Detener el ataque inmediatamente después de encontrar la primera contraseña válida. |
 | `-w n` | Tiempo de espera (Wait time) en segundos entre conexiones. |
 
-### Contramedidas Modernas y Defensa en Profundidad
+#### Ejemplos Prácticos de Sintaxis en Hydra
+```bash
+# Ataque de fuerza bruta contra FTP usando el diccionario RockYou
+hydra -l mark -P /usr/share/wordlists/rockyou.txt 10.66.164.238 ftp
+
+# Ataque de fuerza bruta contra SSH para un usuario específico
+hydra -l frank -P /usr/share/wordlists/rockyou.txt 10.66.164.238 ssh
+
+# Ataque de Credential Stuffing (Lista de usuarios + Lista de contraseñas)
+hydra -L users.txt -P passwords.txt 10.66.164.238 ssh -t 4 -f
+```
+
+Si la política de contraseñas es débil o si se permiten métodos obsoletos de autenticación, el compromiso del servidor es inminente. Aquí es donde la seguridad reactiva falla y se vuelve obligatorio implementar un enfoque proactivo.
+
+## 6. Contramedidas Modernas y Defensa en Profundidad
 La seguridad robusta exige la combinación de controles técnicos en múltiples capas:
 
 - [x] **HSTS (HTTP Strict Transport Security):** Cabecera web que instruye al navegador a comunicarse estrictamente vía HTTPS, anulando los ataques de SSL Stripping.
