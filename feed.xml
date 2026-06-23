@@ -4,7 +4,7 @@
   <id>https://balo93.github.io/</id>
   <title>CyberBalo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-06-17T22:54:49-05:00</updated>
+  <updated>2026-06-23T00:24:56-05:00</updated>
   <author>
     <name>Alvaro Gavilanes</name>
     <uri>https://balo93.github.io/</uri>
@@ -17,6 +17,58 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Script para automatizar la apertura y cierre de exámenes en Moodle sin clave</title>
+    <link href="https://balo93.github.io/posts/moodle-script-sin-clave/" rel="alternate" type="text/html" title="Script para automatizar la apertura y cierre de exámenes en Moodle sin clave" />
+    <published>2026-06-22T23:15:00-05:00</published>
+  
+    <updated>2026-06-22T23:15:00-05:00</updated>
+  
+    <id>https://balo93.github.io/posts/moodle-script-sin-clave/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/moodle-script-sin-clave/" />
+    <author>
+      <name>Alvaro Gavilanes</name>
+    </author>
+
+  
+    
+    <category term="Moodle" />
+    
+    <category term="Automatización" />
+    
+  
+
+  <summary>Código Python para automatizar la apertura y cierre de exámenes en Moodle sin clave  En este blog, presento un script en Python que permite automatizar la apertura y cierre de exámenes en Moodle sin necesidad de gestionar claves para cada examen. Este script se puede ejecutar como un proceso cron para garantizar que los exámenes se abran y cierren automáticamente según el horario establecido.  ...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Automatización de moodle con clave en evaluaciones</title>
+    <link href="https://balo93.github.io/posts/moodle-script-clave/" rel="alternate" type="text/html" title="Automatización de moodle con clave en evaluaciones" />
+    <published>2026-06-21T22:15:00-05:00</published>
+  
+    <updated>2026-06-21T22:15:00-05:00</updated>
+  
+    <id>https://balo93.github.io/posts/moodle-script-clave/</id>
+    <content type="text/html" src="https://balo93.github.io/posts/moodle-script-clave/" />
+    <author>
+      <name>Alvaro Gavilanes</name>
+    </author>
+
+  
+    
+    <category term="Moodle" />
+    
+    <category term="Automatización" />
+    
+  
+
+  <summary>Código Python para automatizar la apertura y cierre de exámenes en Moodle con clave  En este blog, presento un script en Python que permite automatizar la apertura y cierre de exámenes en Moodle, incluyendo la gestión de claves para cada examen. Este script se puede ejecutar como un proceso cron para garantizar que los exámenes se abran y cierren automáticamente según el horario establecido.  i...</summary>
+
+  </entry>
 
   
   <entry>
@@ -93,58 +145,6 @@
   
 
   <summary>Hay una frase muy famosa en el mundo de la ingeniería que dice: “No puedes gestionar lo que no puedes medir”. En la ingeniería civil, un profesional no define si un puente es seguro basándose en su intuición o en “un presentimiento”; utiliza cálculos, datos y métricas exactas.  Sin embargo, en el pentesting clásico, los reportes suelen entregarse llenos de narrativas subjetivas (“en mi opinión,...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>OWASP WSTG: La guía definitiva para auditorías Web profesionales</title>
-    <link href="https://balo93.github.io/posts/3owasp-wstg/" rel="alternate" type="text/html" title="OWASP WSTG: La guía definitiva para auditorías Web profesionales" />
-    <published>2026-06-05T02:30:00-05:00</published>
-  
-    <updated>2026-06-05T02:41:23-05:00</updated>
-  
-    <id>https://balo93.github.io/posts/3owasp-wstg/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/3owasp-wstg/" />
-    <author>
-      <name>Alvaro Gavilanes</name>
-    </author>
-
-  
-    
-    <category term="Ciberseguridad" />
-    
-    <category term="Metodologías" />
-    
-  
-
-  <summary>Imagina que estás auditando una tienda en línea. La aplicación tiene registro de usuarios, buscador de productos, carrito de compras, pasarela de pagos y rastreo de envíos. ¿Por dónde empiezas? ¿Pruebas el formulario de login? ¿La barra de búsqueda? ¿La API de pagos?  Con docenas de superficies de ataque en una sola aplicación web, es increíblemente fácil cometer dos errores: probar lo mismo do...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>NIST SP 800-115: El estándar institucional y gubernamental de evaluación</title>
-    <link href="https://balo93.github.io/posts/4nist-sp-800-115/" rel="alternate" type="text/html" title="NIST SP 800-115: El estándar institucional y gubernamental de evaluación" />
-    <published>2026-06-05T02:25:00-05:00</published>
-  
-    <updated>2026-06-05T02:41:23-05:00</updated>
-  
-    <id>https://balo93.github.io/posts/4nist-sp-800-115/</id>
-    <content type="text/html" src="https://balo93.github.io/posts/4nist-sp-800-115/" />
-    <author>
-      <name>Alvaro Gavilanes</name>
-    </author>
-
-  
-    
-    <category term="Ciberseguridad" />
-    
-    <category term="Metodologías" />
-    
-  
-
-  <summary>Imagina que trabajas como analista de seguridad para una agencia gubernamental o una gran empresa que tiene contratos estatales. Tu organización necesita una auditoría de seguridad, pero los resultados deben dejar conformes a los auditores, cumplir con normativas federales y ser 100% defendibles ante cualquier comité de supervisión.  En este escenario, un reporte de pentesting lleno de comentar...</summary>
 
   </entry>
 
